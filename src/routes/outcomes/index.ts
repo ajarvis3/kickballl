@@ -14,3 +14,6 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       OutcomeData.createAndSaveOutcome(req.body.name, req.body.conditionFields);
    }
 });
+
+const outcomesRouter = router;
+export default outcomesRouter;

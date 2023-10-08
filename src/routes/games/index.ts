@@ -2,8 +2,11 @@ import { NextFunction } from "express";
 import IGame from "src/models/types/game";
 import GameData from "src/utils/db/games/GameData";
 import MyError from "../../types/Error";
+import atBatRouter from "./atbat/index";
 
 const router = express.Router();
+
+router.use("/atBat", atBatRouter);
 
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
@@ -25,3 +28,6 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       });
    }
 });
+
+const gamesRouter = router;
+export default gamesRouter;

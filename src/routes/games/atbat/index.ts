@@ -19,3 +19,6 @@ router.put("/:atBatId", (req: any, res: any, next: NextFunction) => {
       );
    }
 });
+
+const atBatRouter = router;
+export default atBatRouter;

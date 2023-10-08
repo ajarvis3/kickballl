@@ -39,3 +39,6 @@ router.get("/", (req: any, res: any, next: NextFunction) => {
       res.status(200).send(templates);
    });
 });
+
+const templatesRouter = router;
+export default templatesRouter;
