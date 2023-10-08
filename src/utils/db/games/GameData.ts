@@ -25,7 +25,9 @@ class GameData {
          atBatIds,
       });
    };
-   saveGame = (game: IGame) => {};
+   saveGame = (game: IGame) => {
+      return game.save();
+   };
    createAndSaveGame = (
       ruleTemplateId: string,
       currInning: number,
@@ -35,7 +37,7 @@ class GameData {
       date: Date,
       atBatIds: IAtBat[]
    ) => {
-      this.saveGame(
+      return this.saveGame(
          this.createGame(
             ruleTemplateId,
             currInning,
