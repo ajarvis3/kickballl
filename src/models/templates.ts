@@ -1,22 +1,42 @@
 import mongoose from "mongoose";
-import ILineup from "./types/lineup";
+import Outcome from "./outcome";
+import ITemplate from "./types/templates";
 
-const LineupSchema = new mongoose.Schema<ILineup>(
+const TemplateSchema = new mongoose.Schema<ITemplate>(
    {
       _id: {
          type: String,
       },
-      teamName: {
-         type: String,
+      countTypes: {
+         type: [String],
          required: true,
       },
-      lineup: {
-         type: [{ type: String }],
+      inningSlaughterRule: {
+         type: Number,
+      },
+      inningSlaughterRuleEffectiveLastLicks: {
+         type: Boolean,
+      },
+      gameSlaughterRule: {
+         type: Number,
+      },
+      gameSlaughterEffectiveInning: {
+         type: Number,
+      },
+      outcomes: {
+         type: [Outcome],
+         required: true,
+      },
+      maxInnings: {
+         type: Number,
          required: true,
       },
    },
    { _id: false }
 );
 
-const Lineup: mongoose.Model<ILineup> = mongoose.model("Lineup", LineupSchema);
-export default Lineup;
+const Template: mongoose.Model<ITemplate> = mongoose.model(
+   "Template",
+   TemplateSchema
+);
+export default Template;
