@@ -33,3 +33,9 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       });
    }
 });
+
+router.get("/", (req: any, res: any, next: NextFunction) => {
+   TemplateData.getAllTemplates().then((templates: ITemplate[]) => {
+      res.status(200).send(templates);
+   });
+});
