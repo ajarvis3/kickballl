@@ -1,7 +1,7 @@
 import ITemplate from "../../models/types/templates";
 import TemplateData from "../../utils/db/templates/TemplateData";
 import MyError from "../../types/Error";
-import { NextFunction } from "express";
+import express, { NextFunction } from "express";
 
 const router = express.Router();
 

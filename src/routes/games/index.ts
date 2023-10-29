@@ -1,4 +1,4 @@
-import { NextFunction } from "express";
+import express, { NextFunction } from "express";
 import IGame from "src/models/types/game";
 import GameData from "src/utils/db/games/GameData";
 import MyError from "../../types/Error";

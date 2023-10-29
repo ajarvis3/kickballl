@@ -1,3 +1,4 @@
+import express from "express";
 import gamesRouter from "./games/index";
 import outcomesRouter from "./outcomes/index";
 import templatesRouter from "./templates/index";

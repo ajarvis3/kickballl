@@ -1,4 +1,4 @@
-import { NextFunction } from "express";
+import express, { NextFunction } from "express";
 import IAtBat from "../../../models/types/atbat";
 import MyError from "../../../types/Error";
 import AtBatData from "../../../utils/db/atbats/AtBatData";

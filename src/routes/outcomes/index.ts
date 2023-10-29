@@ -1,4 +1,4 @@
-import { NextFunction } from "express";
+import express, { NextFunction } from "express";
 import MyError from "../../types/Error";
 import OutcomeData from "../../utils/db/outcomes/OutcomeData";
 
