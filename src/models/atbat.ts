@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Outcome from "./outcome";
+import { OutcomeSchema } from "./outcome";
 import IAtBat from "./types/atbat";
 
 const AtBatSchema = new mongoose.Schema<IAtBat>(
@@ -16,7 +16,7 @@ const AtBatSchema = new mongoose.Schema<IAtBat>(
          required: true,
       },
       outcome: {
-         type: Outcome,
+         type: OutcomeSchema,
       },
       timeUpdated: {
          type: Number,
@@ -25,6 +25,7 @@ const AtBatSchema = new mongoose.Schema<IAtBat>(
    },
    { _id: false }
 );
+export { AtBatSchema };
 
 const AtBat: mongoose.Model<IAtBat> = mongoose.model("AtBat", AtBatSchema);
 export default AtBat;

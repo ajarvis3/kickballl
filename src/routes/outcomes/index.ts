@@ -2,7 +2,7 @@ import express, { NextFunction } from "express";
 import MyError from "../../types/Error";
 import OutcomeData from "../../utils/db/outcomes/OutcomeData";
 
-const router = express.Router;
+const router = express.Router();
 
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {

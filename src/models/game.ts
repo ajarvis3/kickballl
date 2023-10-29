@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import AtBat from "./atbat";
-import IAtBat from "./types/atbat";
+import { AtBatSchema } from "./atbat";
 import IGame from "./types/game";
 
 const GameSchema = new mongoose.Schema<IGame>(
@@ -33,7 +32,7 @@ const GameSchema = new mongoose.Schema<IGame>(
          required: true,
       },
       atBatIds: {
-         type: [{ type: AtBat }],
+         type: [{ type: AtBatSchema }],
          required: true,
       },
    },

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Outcome from "./outcome";
+import { OutcomeSchema } from "./outcome";
 import ITemplate from "./types/templates";
 
 const TemplateSchema = new mongoose.Schema<ITemplate>(
@@ -24,7 +24,7 @@ const TemplateSchema = new mongoose.Schema<ITemplate>(
          type: Number,
       },
       outcomes: {
-         type: [Outcome],
+         type: [OutcomeSchema],
          required: true,
       },
       maxInnings: {
@@ -34,6 +34,7 @@ const TemplateSchema = new mongoose.Schema<ITemplate>(
    },
    { _id: false }
 );
+export { TemplateSchema };
 
 const Template: mongoose.Model<ITemplate> = mongoose.model(
    "Template",

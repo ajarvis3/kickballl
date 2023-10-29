@@ -14,6 +14,7 @@ const LineupSchema = new mongoose.Schema<ILineup>({
       required: true,
    },
 });
+export { LineupSchema };
 
 const Lineup: mongoose.Model<ILineup> = mongoose.model("Lineup", LineupSchema);
 export default Lineup;

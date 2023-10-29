@@ -29,6 +29,7 @@ OutcomeSchema.methods.testOutcome = function (atBat: IAtBat) {
    }
    return true;
 };
+export { OutcomeSchema };
 
 const Outcome: mongoose.Model<IOutcome> = mongoose.model(
    "Outcome",

@@ -1,7 +1,7 @@
 import Game from "../../../models/game";
 import IGame from "../../../models/types/game";
 import { v4 as uuidv4 } from "uuid";
-import IAtBat from "src/models/types/atbat";
+import IAtBat from "../../../models/types/atbat";
 
 class GameData {
    createGame = (
