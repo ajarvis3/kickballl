@@ -25,7 +25,8 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          new Date(),
          [],
          [],
-         []
+         [],
+         0
       ).then((game: IGame) => {
          res.status(200).send(JSON.stringify(game));
       });
@@ -33,22 +34,22 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
 });
 
 // /games/:id
-router.put("/", (req: any, res: any, next: NextFunction) => {
+router.put("/:id", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");
    };
-   if (!req.query.id) {
+   if (!req.params.id) {
       failed();
    } else {
       const game: IGame = req.body.game;
-      GameData.updateGame(req.query.id, req.body.game);
+      GameData.updateGame(req.params.id, req.body.game);
    }
 });
 
 // /game/:id
-router.get("/", (req: any, res: any, next: NextFunction) => {
-   if (req.query.id) {
-      const id = req.query.id as string;
+router.get("/:id", (req: any, res: any, next: NextFunction) => {
+   if (req.params.id) {
+      const id = req.params.id as string;
       GameData.findById(id).then((game) => {
          res.status(200).send(JSON.stringify(game));
       });

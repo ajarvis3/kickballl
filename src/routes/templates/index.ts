@@ -36,10 +36,10 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
 });
 
 // /templates/:id?
-router.get("/", (req: any, res: any, next: NextFunction) => {
-   if (req.query.id) {
+router.get("/:id?", (req: any, res: any, next: NextFunction) => {
+   if (req.params.id) {
       res.status(200).send(
-         JSON.stringify(TemplateData.getTemplateById(req.query.id))
+         JSON.stringify(TemplateData.getTemplateById(req.params.id))
       );
    } else {
       TemplateData.getAllTemplates().then((templates: ITemplate[]) => {

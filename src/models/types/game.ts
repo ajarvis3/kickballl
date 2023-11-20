@@ -12,6 +12,7 @@ interface IGame extends mongoose.Document {
    atBatIds: IAtBat[];
    score1: number[];
    score2: number[];
+   currOuts: number;
    __v: number;
 }
 

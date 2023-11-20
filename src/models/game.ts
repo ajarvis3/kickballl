@@ -43,6 +43,10 @@ const GameSchema = new mongoose.Schema<IGame>(
          type: [Number],
          required: true,
       },
+      currOuts: {
+         type: Number,
+         required: true,
+      },
    },
    { _id: false }
 );

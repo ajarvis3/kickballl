@@ -20,5 +20,16 @@ router.put("/:atBatId", (req: any, res: any, next: NextFunction) => {
    }
 });
 
+router.get("/:atBatId", (req, res: any, next: NextFunction) => {
+   const failed = () => {
+      const err = new MyError(400, "Bad Request");
+   };
+   if (!req.params.atBatId) {
+      failed();
+   } else {
+      AtBatData.findById(req.params.atBatId);
+   }
+});
+
 const atBatRouter = router;
 export default atBatRouter;
