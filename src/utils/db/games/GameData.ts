@@ -11,7 +11,9 @@ class GameData {
       lineup1Id: string,
       lineup2Id: string,
       date: Date,
-      atBatIds: IAtBat[]
+      atBatIds: IAtBat[],
+      score1: number,
+      score2: number
    ) => {
       const _id = uuidv4();
       return new Game({
@@ -23,6 +25,8 @@ class GameData {
          lineup2Id,
          date,
          atBatIds,
+         score1,
+         score2,
       });
    };
    saveGame = (game: IGame) => {
@@ -35,7 +39,9 @@ class GameData {
       lineup1Id: string,
       lineup2Id: string,
       date: Date,
-      atBatIds: IAtBat[]
+      atBatIds: IAtBat[],
+      score1: number,
+      score2: number
    ) => {
       return this.saveGame(
          this.createGame(
@@ -45,9 +51,14 @@ class GameData {
             lineup1Id,
             lineup2Id,
             date,
-            atBatIds
+            atBatIds,
+            score1,
+            score2
          )
       );
+   };
+   updateGame = (id: string, game: IGame) => {
+      return Game.findByIdAndUpdate(id, game);
    };
    findAllGames = () => {
       return Game.find().exec();

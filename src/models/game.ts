@@ -35,6 +35,14 @@ const GameSchema = new mongoose.Schema<IGame>(
          type: [{ type: AtBatSchema }],
          required: true,
       },
+      score1: {
+         type: Number,
+         required: true,
+      },
+      score2: {
+         type: Number,
+         required: true,
+      },
    },
    { _id: false }
 );

@@ -10,6 +10,8 @@ interface IGame extends mongoose.Document {
    lineup2Id: string;
    date: Date;
    atBatIds: IAtBat[];
+   score1: number;
+   score2: number;
    __v: number;
 }
 
