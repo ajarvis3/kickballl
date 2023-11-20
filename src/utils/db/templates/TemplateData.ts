@@ -52,6 +52,12 @@ class TemplateData {
    getAllTemplates = () => {
       return Template.find().exec();
    };
+   findById = (id: string) => {
+      return Template.findById({ id: id }).cursor().next();
+   };
+   getTemplateById = (id: string) => {
+      return Template.findById(id).cursor().next();
+   };
 }
 
 export default new TemplateData();

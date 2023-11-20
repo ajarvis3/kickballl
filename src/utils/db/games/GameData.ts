@@ -49,6 +49,12 @@ class GameData {
          )
       );
    };
+   findAllGames = () => {
+      return Game.find().exec();
+   };
+   findById = (id: string) => {
+      return Game.findById({ id: id }).cursor().next();
+   };
 }
 
 export default new GameData();

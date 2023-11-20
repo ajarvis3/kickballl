@@ -34,7 +34,7 @@ class AtBatData {
          }
       );
    };
-   atBatExistsById = (_id: string) => {
+   findById = (_id: string) => {
       return AtBat.findOne({ _id }).exec();
    };
 }

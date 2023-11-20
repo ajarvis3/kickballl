@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.use("/atBat", atBatRouter);
 
+// /games
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");
@@ -24,7 +25,17 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          new Date(),
          []
       ).then((game: IGame) => {
-         res.status(200).send(game);
+         res.status(200).send(JSON.stringify(game));
+      });
+   }
+});
+
+// /game/:id
+router.get("/", (req: any, res: any, next: NextFunction) => {
+   if (req.query.id) {
+      const id = req.query.id as string;
+      GameData.findById(id).then((game) => {
+         res.status(200).send(JSON.stringify(game));
       });
    }
 });

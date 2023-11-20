@@ -5,6 +5,7 @@ import express, { NextFunction } from "express";
 
 const router = express.Router();
 
+// /templates
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");
@@ -29,15 +30,22 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          req.body.outcomes,
          req.body.maxInnings
       ).then((template: ITemplate) => {
-         res.status(200).send(template);
+         res.status(200).send(JSON.stringify(template));
       });
    }
 });
 
+// /templates/:id?
 router.get("/", (req: any, res: any, next: NextFunction) => {
-   TemplateData.getAllTemplates().then((templates: ITemplate[]) => {
-      res.status(200).send(templates);
-   });
+   if (req.query.id) {
+      res.status(200).send(
+         JSON.stringify(TemplateData.getTemplateById(req.query.id))
+      );
+   } else {
+      TemplateData.getAllTemplates().then((templates: ITemplate[]) => {
+         res.status(200).send(JSON.stringify(templates));
+      });
+   }
 });
 
 const templatesRouter = router;

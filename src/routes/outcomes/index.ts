@@ -4,6 +4,7 @@ import OutcomeData from "../../utils/db/outcomes/OutcomeData";
 
 const router = express.Router();
 
+// /outcomes
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");
@@ -12,6 +13,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       failed();
    } else {
       OutcomeData.createAndSaveOutcome(req.body.name, req.body.conditionFields);
+      res.status(200).send();
    }
 });
 

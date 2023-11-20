@@ -14,7 +14,7 @@ router.put("/:atBatId", (req: any, res: any, next: NextFunction) => {
    } else {
       AtBatData.changeAtBatCount(req.params.atBatId, req.body.count).then(
          (atBat: IAtBat) => {
-            res.status(200).send(atBat);
+            res.status(200).send(JSON.stringify(atBat));
          }
       );
    }
