@@ -11,6 +11,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       const err = new MyError(400, "Bad Request");
    };
    if (
+      !req.body.name ||
       !req.body.countTypes ||
       !req.body.inningSlaughterRule ||
       !req.body.inningSlaughterRuleEffectiveLastLicks ||
@@ -22,6 +23,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       failed();
    } else {
       TemplateData.createAndSaveTemplate(
+         req.body.name,
          req.body.countTypes,
          req.body.inningSlaughterRule,
          req.body.inningSlaughterRuleEffectiveLastLicks,

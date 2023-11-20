@@ -5,6 +5,7 @@ import AtBatData from "../../../utils/db/atbats/AtBatData";
 
 const router = express.Router();
 
+// /games/atBat/:atBatId
 router.put("/:atBatId", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");
@@ -20,6 +21,7 @@ router.put("/:atBatId", (req: any, res: any, next: NextFunction) => {
    }
 });
 
+// /games/atBat/:atBatId
 router.get("/:atBatId", (req, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");

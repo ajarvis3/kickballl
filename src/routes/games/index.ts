@@ -46,12 +46,16 @@ router.put("/:id", (req: any, res: any, next: NextFunction) => {
    }
 });
 
-// /game/:id
-router.get("/:id", (req: any, res: any, next: NextFunction) => {
+// /game/:id?
+router.get("/:id?", (req: any, res: any, next: NextFunction) => {
    if (req.params.id) {
       const id = req.params.id as string;
       GameData.findById(id).then((game) => {
          res.status(200).send(JSON.stringify(game));
+      });
+   } else {
+      GameData.findAllGames().then((games) => {
+         res.status(200).send(JSON.stringify(games));
       });
    }
 });

@@ -7,6 +7,10 @@ const TemplateSchema = new mongoose.Schema<ITemplate>(
       _id: {
          type: String,
       },
+      name: {
+         type: String,
+         required: true,
+      },
       countTypes: {
          type: [String],
          required: true,

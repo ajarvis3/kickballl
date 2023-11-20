@@ -4,6 +4,7 @@ import IOutcome from "./outcome";
 
 interface ITemplate extends mongoose.Document {
    _id: string;
+   name: string;
    countTypes: string[]; // e.g. ball, strike, foul
    inningSlaughterRule: number | null;
    inningSlaughterRuleEffectiveLastLicks: boolean | null;

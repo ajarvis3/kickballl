@@ -5,6 +5,7 @@ import ITemplate from "../../../models/types/templates";
 
 class TemplateData {
    createTemplate = (
+      name: string,
       countTypes: string[],
       inningSlaughterRule: number | null,
       inningSlaughterRuleEffectiveLastLicks: boolean | null,
@@ -16,6 +17,7 @@ class TemplateData {
       const _id = uuidv4();
       return new Template({
          _id,
+         name,
          countTypes,
          inningSlaughterRule,
          inningSlaughterRuleEffectiveLastLicks,
@@ -29,6 +31,7 @@ class TemplateData {
       return template.save();
    };
    createAndSaveTemplate = (
+      name: string,
       countTypes: string[],
       inningSlaughterRule: number | null,
       inningSlaughterRuleEffectiveLastLicks: boolean | null,
@@ -39,6 +42,7 @@ class TemplateData {
    ): Promise<ITemplate> => {
       return this.saveTemplate(
          this.createTemplate(
+            name,
             countTypes,
             inningSlaughterRule,
             inningSlaughterRuleEffectiveLastLicks,
