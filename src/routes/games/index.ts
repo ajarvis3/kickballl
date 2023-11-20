@@ -24,8 +24,8 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          req.body.lineup2Id,
          new Date(),
          [],
-         0,
-         0
+         [],
+         []
       ).then((game: IGame) => {
          res.status(200).send(JSON.stringify(game));
       });

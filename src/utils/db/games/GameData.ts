@@ -12,8 +12,8 @@ class GameData {
       lineup2Id: string,
       date: Date,
       atBatIds: IAtBat[],
-      score1: number,
-      score2: number
+      score1: number[],
+      score2: number[]
    ) => {
       const _id = uuidv4();
       return new Game({
@@ -40,8 +40,8 @@ class GameData {
       lineup2Id: string,
       date: Date,
       atBatIds: IAtBat[],
-      score1: number,
-      score2: number
+      score1: number[],
+      score2: number[]
    ) => {
       return this.saveGame(
          this.createGame(

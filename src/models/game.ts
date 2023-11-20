@@ -36,11 +36,11 @@ const GameSchema = new mongoose.Schema<IGame>(
          required: true,
       },
       score1: {
-         type: Number,
+         type: [Number],
          required: true,
       },
       score2: {
-         type: Number,
+         type: [Number],
          required: true,
       },
    },
