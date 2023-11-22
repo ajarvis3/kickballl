@@ -60,7 +60,7 @@ class TemplateData {
       return Template.findById({ id: id }).cursor().next();
    };
    getTemplateById = (id: string) => {
-      return Template.findById(id).cursor().next();
+      return Template.findById(id).exec();
    };
 }
 

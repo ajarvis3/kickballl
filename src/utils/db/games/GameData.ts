@@ -68,7 +68,7 @@ class GameData {
       return Game.find().exec();
    };
    findById = (id: string) => {
-      return Game.findById({ id: id }).cursor().next();
+      return Game.findById(id).exec();
    };
 }
 

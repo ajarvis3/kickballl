@@ -3,10 +3,12 @@ import IGame from "../../models/types/game";
 import GameData from "../../utils/db/games/GameData";
 import MyError from "../../types/Error";
 import atBatRouter from "./atbat/index";
+import lineupRouter from "./lineup";
 
 const router = express.Router();
 
 router.use("/atBat", atBatRouter);
+router.use("/lineup", lineupRouter);
 
 // /games
 router.post("/", (req: any, res: any, next: NextFunction) => {
@@ -46,15 +48,19 @@ router.put("/:id", (req: any, res: any, next: NextFunction) => {
    }
 });
 
-// /game/:id?
+// /games/:id?
 router.get("/:id?", (req: any, res: any, next: NextFunction) => {
+   console.log("/games");
    if (req.params.id) {
       const id = req.params.id as string;
-      GameData.findById(id).then((game) => {
+      console.log(id);
+      GameData.findById(req.params.id).then((game) => {
+         console.log(game);
          res.status(200).send(JSON.stringify(game));
       });
    } else {
-      GameData.findAllGames().then((games) => {
+      console.log("here");
+      GameData.findAllGames().then((games: IGame[]) => {
          res.status(200).send(JSON.stringify(games));
       });
    }

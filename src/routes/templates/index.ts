@@ -41,9 +41,10 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
 // /templates/:id?
 router.get("/:id?", (req: any, res: any, next: NextFunction) => {
    if (req.params.id) {
-      res.status(200).send(
-         JSON.stringify(TemplateData.getTemplateById(req.params.id))
-      );
+      console.log(req.params.id);
+      TemplateData.getTemplateById(req.params.id).then((template) => {
+         res.status(200).send(JSON.stringify(template));
+      });
    } else {
       TemplateData.getAllTemplates().then((templates: ITemplate[]) => {
          res.status(200).send(JSON.stringify(templates));
