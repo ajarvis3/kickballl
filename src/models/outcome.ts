@@ -3,7 +3,7 @@ import IAtBat from "./types/atbat";
 import IOutcome from "./types/outcome";
 
 const ConditionFields = new mongoose.Schema({
-   countType: Number,
+   countType: String,
    countNumberReq: Number,
 });
 
@@ -14,16 +14,22 @@ const OutcomeSchema = new mongoose.Schema<IOutcome>({
    name: {
       type: String,
    },
+   countTypes: {
+      type: [String], // e.g. ball, strike, foul
+   },
    conditionFields: {
       type: [ConditionFields],
    },
 });
 
 OutcomeSchema.methods.testOutcome = function (atBat: IAtBat) {
-   for (let condField of this.conditionsFields) {
+   for (let condField of this.conditionFields) {
+      let countTypeInd = this.countTypes.indexOf(condField.countType);
       let countReq = condField.countNumberReq;
-      let countNum = atBat.count[condField.countType];
-      if (countNum < countReq) {
+      let countNum = atBat.count[countTypeInd];
+      if (countReq > 0 && countNum < countReq) {
+         return false;
+      } else if (countReq == 0 && countNum > countReq) {
          return false;
       }
    }

@@ -9,6 +9,7 @@ const router = express.Router();
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {
       const err = new MyError(400, "Bad Request");
+      return err;
    };
    if (
       !req.body.name ||
@@ -20,7 +21,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       !req.body.outcomes ||
       !req.body.maxInnings
    ) {
-      failed();
+      res.status(400).send(JSON.stringify(failed()));
    } else {
       TemplateData.createAndSaveTemplate(
          req.body.name,

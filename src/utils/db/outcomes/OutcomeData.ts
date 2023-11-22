@@ -5,7 +5,8 @@ import IOutcome from "../../../models/types/outcome";
 class OutcomeData {
    createOutcome = (
       name: string,
-      conditionFields: { countType: number; countNumberReq: number }[]
+      conditionFields: { countType: string; countNumberReq: number }[],
+      countTypes: string
    ) => {
       const _id = uuidv4();
       return new Outcome({ _id, name, conditionFields });
@@ -15,9 +16,12 @@ class OutcomeData {
    };
    createAndSaveOutcome = (
       name: string,
-      conditionFields: { countType: number; countNumberReq: number }[]
+      conditionFields: { countType: string; countNumberReq: number }[],
+      countTypes: string
    ) => {
-      return this.saveOutcome(this.createOutcome(name, conditionFields));
+      return this.saveOutcome(
+         this.createOutcome(name, conditionFields, countTypes)
+      );
    };
 }
 
