@@ -27,6 +27,18 @@ const newAtBat = (gameId: string, template: ITemplate) => {
    return AtBatData.createAndSaveAtBat(gameId, initArr);
 };
 
+const updateGame = (gameId: string, game: IGame, res: any) => {
+   GameData.updateGame(gameId, game).then((newGame) => {
+      if (newGame?._id) {
+         res.status(200).send(JSON.stringify(newGame));
+      } else {
+         failed(res);
+         return;
+      }
+   });
+   return;
+};
+
 // /games
 router.post("/", (req: any, res: any, next: NextFunction) => {
    console.log("POST /games", req.body);
@@ -34,14 +46,10 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       failed(res);
       return;
    } else {
-      console.log(req.body.ruleTemplateId);
       TemplateData.getTemplateById(req.body.ruleTemplateId).then((template) => {
          if (template?._id) {
-            console.log(template);
             const maxInnings = template.maxInnings;
-            console.log(maxInnings);
             const initialScores = new Array(maxInnings).fill(0);
-            console.log(initialScores);
             GameData.createAndSaveGame(
                req.body.ruleTemplateId,
                1,
@@ -54,7 +62,10 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
                initialScores,
                0
             ).then((game: IGame) => {
-               res.status(200).send(JSON.stringify(game));
+               newAtBat(game._id, template).then((value: IAtBat) => {
+                  game.atBatIds.push(value);
+                  updateGame(game._id, game, res);
+               });
             });
          }
       });
@@ -65,7 +76,6 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
 router.put("/:id", (req: any, res: any, next: NextFunction) => {
    // console.log("PUT /games/:id", req.body.body);
    if (!req.params.id) {
-      console.log("here");
       failed(res);
       return;
    } else {
@@ -75,8 +85,11 @@ router.put("/:id", (req: any, res: any, next: NextFunction) => {
          if (template?._id) {
             const atBats = game.atBatIds;
             const currAtBat = atBats[atBats.length - 1];
-            let atBatOutcome: IOutcome | undefined = undefined;
+            let atBatOutcome: IOutcome | undefined = currAtBat.outcome
+               ? currAtBat.outcome
+               : undefined;
             template.outcomes.forEach((outcome) => {
+               console.log(currAtBat, outcome);
                if (
                   atBatOutcome === undefined &&
                   outcome.testOutcome(currAtBat)
@@ -100,27 +113,11 @@ router.put("/:id", (req: any, res: any, next: NextFunction) => {
             }
             console.log("Curr Outs2:" + game.currOuts);
             if (atBatOutcome === undefined && currAtBat !== undefined) {
-               GameData.updateGame(req.params.id, game).then((newGame) => {
-                  if (newGame?._id) {
-                     console.log(newGame);
-                     res.status(200).send(JSON.stringify(newGame));
-                  } else {
-                     failed(res);
-                     return;
-                  }
-               });
-               return;
+               updateGame(req.params.id, game, res);
             } else {
                newAtBat(game._id, template).then((value: IAtBat) => {
                   game.atBatIds.push(value);
-                  GameData.updateGame(req.params.id, game).then((newGame) => {
-                     if (newGame?._id) {
-                        res.status(200).send(JSON.stringify(newGame));
-                     } else {
-                        failed(res);
-                        return;
-                     }
-                  });
+                  updateGame(req.params.id, game, res);
                });
             }
          } else failed(res);

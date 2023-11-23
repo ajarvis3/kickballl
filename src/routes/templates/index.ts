@@ -2,6 +2,7 @@ import ITemplate from "../../models/types/templates";
 import TemplateData from "../../utils/db/templates/TemplateData";
 import MyError from "../../types/Error";
 import express, { NextFunction } from "express";
+import IOutcome from "../../models/types/outcome";
 
 const router = express.Router();
 
@@ -23,6 +24,11 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
    ) {
       res.status(400).send(JSON.stringify(failed()));
    } else {
+      const outcomes: IOutcome[] = req.body.outcomes;
+      const countTypes: string[] = req.body.countTypes;
+      outcomes.forEach((outcome) => {
+         outcome.countTypes = countTypes;
+      });
       TemplateData.createAndSaveTemplate(
          req.body.name,
          req.body.countTypes,
@@ -30,7 +36,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          req.body.inningSlaughterRuleEffectiveLastLicks,
          req.body.gameSlaughterRule,
          req.body.gameSlaughterEffectiveInning,
-         req.body.outcomes,
+         outcomes,
          req.body.maxInnings
       ).then((template: ITemplate) => {
          res.status(200).send(JSON.stringify(template));
