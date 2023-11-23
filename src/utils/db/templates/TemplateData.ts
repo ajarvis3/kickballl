@@ -57,7 +57,7 @@ class TemplateData {
       return Template.find().exec();
    };
    findById = (id: string) => {
-      return Template.findById({ id: id }).cursor().next();
+      return Template.findById(id).exec();
    };
    getTemplateById = (id: string) => {
       return Template.findById(id).exec();

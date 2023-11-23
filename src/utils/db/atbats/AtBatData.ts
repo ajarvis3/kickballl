@@ -21,18 +21,22 @@ class AtBatData {
       return this.saveAtBat(this.createAtBat(gameId, count));
    };
    changeAtBatCount = (_id: string, count: number[]) => {
-      return AtBat.findOneAndUpdate({ _id }, { count: count }).then(
-         (updatedAtBat: any) => {
-            return updatedAtBat as IAtBat;
-         }
-      );
+      return AtBat.findOneAndUpdate(
+         { _id },
+         { count: count },
+         { returnDocument: "after" }
+      ).then((updatedAtBat: any) => {
+         return updatedAtBat as IAtBat;
+      });
    };
    changeAtBatOutcome = (_id: string, outcome: IOutcome) => {
-      return AtBat.findOneAndUpdate({ _id }, { outcome: outcome }).then(
-         (updatedAtBat: any) => {
-            return updatedAtBat as IAtBat;
-         }
-      );
+      return AtBat.findOneAndUpdate(
+         { _id },
+         { outcome: outcome },
+         { returnDocument: "after" }
+      ).then((updatedAtBat: any) => {
+         return updatedAtBat as IAtBat;
+      });
    };
    findById = (_id: string) => {
       return AtBat.findOne({ _id }).exec();

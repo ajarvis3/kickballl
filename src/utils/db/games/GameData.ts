@@ -62,7 +62,7 @@ class GameData {
       );
    };
    updateGame = (id: string, game: IGame) => {
-      return Game.findByIdAndUpdate(id, game);
+      return Game.findByIdAndUpdate(id, game, { returnDocument: "after" });
    };
    findAllGames = () => {
       return Game.find().exec();

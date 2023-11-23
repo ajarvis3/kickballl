@@ -23,13 +23,15 @@ const OutcomeSchema = new mongoose.Schema<IOutcome>({
 });
 
 OutcomeSchema.methods.testOutcome = function (atBat: IAtBat) {
+   if (atBat === undefined) return false;
    for (let condField of this.conditionFields) {
+      // Get index of templated count type
       let countTypeInd = this.countTypes.indexOf(condField.countType);
+      // get the number required for a count to be applicable
       let countReq = condField.countNumberReq;
+      // get number of count from at bad
       let countNum = atBat.count[countTypeInd];
-      if (countReq > 0 && countNum < countReq) {
-         return false;
-      } else if (countReq == 0 && countNum > countReq) {
+      if (countNum !== countReq) {
          return false;
       }
    }
