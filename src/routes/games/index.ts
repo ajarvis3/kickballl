@@ -6,10 +6,11 @@ import atBatRouter from "./atbat/index";
 import lineupRouter from "./lineup";
 import TemplateData from "../../utils/db/templates/TemplateData";
 import ITemplate from "../../models/types/templates";
-import AtBat from "../../models/atbat";
 import AtBatData from "../../utils/db/atbats/AtBatData";
 import IOutcome from "../../models/types/outcome";
 import IAtBat from "../../models/types/atbat";
+import LineupData from "../../utils/db/lineup/LineupData";
+import IGameResponse from "../../models/types/gameResponse";
 
 const router = express.Router();
 
@@ -131,11 +132,55 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
    if (req.params.id) {
       const id = req.params.id as string;
       GameData.findById(req.params.id).then((game) => {
-         res.status(200).send(JSON.stringify(game));
+         if (game?._id) {
+            LineupData.findById(game.lineup1Id!).then((lineup1) => {
+               LineupData.findById(game.lineup2Id!).then((lineup2) => {
+                  if (
+                     (lineup1 === undefined || lineup1?._id) &&
+                     (lineup2 === undefined || lineup2?._id)
+                  ) {
+                     const gameResp: IGameResponse = {
+                        ...game.toObject(),
+                        lineup1: undefined,
+                        lineup2: undefined,
+                     };
+                     gameResp.lineup1 = lineup1;
+                     gameResp.lineup2 = lineup2;
+                     res.status(200).send(JSON.stringify(gameResp));
+                  }
+               });
+            });
+         } else {
+            failed(res);
+         }
       });
    } else {
-      GameData.findAllGames().then((games: IGame[]) => {
-         res.status(200).send(JSON.stringify(games));
+      GameData.findAllGames().then(async (games: IGame[]) => {
+         const gameRespArr: IGameResponse[] = [];
+
+         for (let i = 0; i < games.length; i++) {
+            const game = games[i];
+            await LineupData.findById(game.lineup1Id!).then(async (lineup1) => {
+               await LineupData.findById(game.lineup2Id!).then((lineup2) => {
+                  if (
+                     (lineup1 === undefined || lineup1?._id) &&
+                     (lineup2 === undefined || lineup2?._id)
+                  ) {
+                     const gameResp: IGameResponse = {
+                        ...game.toObject(),
+                        lineup1: undefined,
+                        lineup2: undefined,
+                     };
+                     gameResp.lineup1 = lineup1;
+                     gameResp.lineup2 = lineup2;
+                     gameRespArr.push(gameResp);
+                     console.log(1);
+                  }
+               });
+            });
+         }
+         res.status(200).send(JSON.stringify(gameRespArr));
+         console.log("returned");
       });
    }
 });

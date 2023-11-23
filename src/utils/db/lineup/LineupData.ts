@@ -19,7 +19,7 @@ class LineupData {
       return this.saveLineup(this.createLineup(teamName, lineup));
    };
    findById = (_id: string) => {
-      return Lineup.findOne({ _id });
+      return Lineup.findById(_id).exec();
    };
 }
 
