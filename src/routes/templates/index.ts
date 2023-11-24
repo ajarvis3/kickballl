@@ -22,7 +22,17 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       !req.body.outcomes ||
       !req.body.maxInnings
    ) {
-      console.error("POST templates failed", req.body);
+      console.error(
+         "POST templates failed",
+         req.body.name,
+         req.body.countTypes,
+         req.body.inningSlaughterRule,
+         req.body.inningSlaughterRuleEffectiveLastLicks,
+         req.body.gameSlaughterRule,
+         req.body.gameSlaughterEffectiveInning,
+         req.body.outcomes,
+         req.body.maxInnings
+      );
       res.status(400).send(JSON.stringify(failed()));
    } else {
       const outcomes: IOutcome[] = req.body.outcomes;
