@@ -28,10 +28,37 @@ const newAtBat = (gameId: string, template: ITemplate) => {
    return AtBatData.createAndSaveAtBat(gameId, initArr);
 };
 
+const returnIndividualGame = (id: string, res: any) => {
+   GameData.findById(id).then((game) => {
+      if (game?._id) {
+         LineupData.findById(game.lineup1Id!).then((lineup1) => {
+            LineupData.findById(game.lineup2Id!).then((lineup2) => {
+               if (
+                  (lineup1 === undefined || lineup1?._id) &&
+                  (lineup2 === undefined || lineup2?._id)
+               ) {
+                  const gameResp: IGameResponse = {
+                     ...game.toObject(),
+                     lineup1: undefined,
+                     lineup2: undefined,
+                  };
+                  gameResp.lineup1 = lineup1;
+                  gameResp.lineup2 = lineup2;
+                  res.status(200).send(JSON.stringify(gameResp));
+               }
+            });
+         });
+      } else {
+         failed(res);
+      }
+   });
+};
+
 const updateGame = (gameId: string, game: IGame, res: any) => {
    GameData.updateGame(gameId, game).then((newGame) => {
       if (newGame?._id) {
-         res.status(200).send(JSON.stringify(newGame));
+         returnIndividualGame(gameId, res);
+         // res.status(200).send(JSON.stringify(newGame));
       } else {
          failed(res);
          return;
