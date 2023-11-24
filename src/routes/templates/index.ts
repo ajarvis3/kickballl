@@ -16,7 +16,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       !req.body.name ||
       !req.body.countTypes ||
       !req.body.inningSlaughterRule ||
-      !req.body.inningSlaughterRuleEffectiveLastLicks ||
+      req.body.inningSlaughterRuleEffectiveLastLicks === undefined ||
       !req.body.gameSlaughterRule ||
       !req.body.gameSlaughterEffectiveInning ||
       !req.body.outcomes ||
