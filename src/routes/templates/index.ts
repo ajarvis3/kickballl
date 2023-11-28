@@ -3,8 +3,66 @@ import TemplateData from "../../utils/db/templates/TemplateData";
 import MyError from "../../types/Error";
 import express, { NextFunction } from "express";
 import IOutcome from "../../models/types/outcome";
+import TemplateAuthChecker from "../../utils/auth/hierarchy/TemplateAuthChecker";
+import IUser from "../../models/types/user";
+import UserData from "../../utils/db/users/UserData";
+import IUserToken from "../../utils/auth/types/OAuthData";
+import IRole from "../../models/types/role";
+import jwt from "jsonwebtoken";
+import getToken from "../../utils/auth/getToken";
 
 const router = express.Router();
+
+const authChecker = new TemplateAuthChecker();
+
+// check for header
+router.use("/", (req, res, next) => {
+   if (!req.headers.authentication) {
+      res.status(401).send();
+   } else {
+      next();
+   }
+});
+
+// check token valid
+router.use("/", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+   console.log("decoded", decoded);
+
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      user
+         ?.verifyUser(getToken(req.headers.authentication as string) as string)
+         .then((_) => {
+            next();
+         })
+         .catch((e) => {
+            res.status(401).send();
+         });
+   });
+});
+
+// check for permissions
+router.use("/:id?", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+   const id = req.params.id ? req.params.id : "";
+
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      if (user?._id) {
+         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
+         if (typeof role === "undefined") {
+            res.status(403).send();
+         } else {
+            next();
+         }
+      } else {
+         res.status(401).send();
+      }
+   });
+});
 
 // /templates
 router.post("/", (req: any, res: any, next: NextFunction) => {

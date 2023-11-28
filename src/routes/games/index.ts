@@ -11,8 +11,17 @@ import IOutcome from "../../models/types/outcome";
 import IAtBat from "../../models/types/atbat";
 import LineupData from "../../utils/db/lineup/LineupData";
 import IGameResponse from "../../models/types/gameResponse";
+import IUser from "../../models/types/user";
+import UserData from "../../utils/db/users/UserData";
+import IUserToken from "../../utils/auth/types/OAuthData";
+import IRole from "../../models/types/role";
+import jwt from "jsonwebtoken";
+import GameAuthChecker from "../../utils/auth/hierarchy/GameAuthChecker";
+import getToken from "../../utils/auth/getToken";
 
 const router = express.Router();
+
+const authChecker = new GameAuthChecker();
 
 router.use("/atBat", atBatRouter);
 router.use("/lineup", lineupRouter);
@@ -66,6 +75,56 @@ const updateGame = (gameId: string, game: IGame, res: any) => {
    });
    return;
 };
+
+// check for header
+router.use("/", (req, res, next) => {
+   console.log(req.headers);
+   if (!req.headers.authentication) {
+      res.status(401).send("No Auth Header Included");
+   } else {
+      next();
+   }
+});
+
+// check token valid
+router.use("/", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   );
+
+   UserData.findUserById(decoded.sub!).then((user: IUser | null) => {
+      user
+         ?.verifyUser(getToken(req.headers.authentication as string) as string)
+         .then((value) => {
+            console.log(value);
+            next();
+         })
+         .catch((e) => {
+            res.status(401).send("Invalid Credentials");
+         });
+   });
+});
+
+// check for permissions
+router.use("/:id?", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+   const id = req.params.id ? req.params.id : "";
+
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      if (user?._id) {
+         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
+         if (typeof role === "undefined") {
+            res.status(403).send();
+         } else {
+            next();
+         }
+      } else {
+         res.status(401).send();
+      }
+   });
+});
 
 // /games
 router.post("/", (req: any, res: any, next: NextFunction) => {

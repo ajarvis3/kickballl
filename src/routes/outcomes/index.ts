@@ -4,6 +4,12 @@ import OutcomeData from "../../utils/db/outcomes/OutcomeData";
 
 const router = express.Router();
 
+import IUser from "../../models/types/user";
+import UserData from "../../utils/db/users/UserData";
+import IUserToken from "../../utils/auth/types/OAuthData";
+import IRole from "../../models/types/role";
+import jwt from "jsonwebtoken";
+
 // /outcomes
 router.post("/", (req: any, res: any, next: NextFunction) => {
    const failed = () => {

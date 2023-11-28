@@ -12,6 +12,7 @@ interface ITemplate extends mongoose.Document {
    gameSlaughterEffectiveInning: number | null;
    outcomes: IOutcome[];
    maxInnings: number;
+   league: string;
    __v: number;
 }
 

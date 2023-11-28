@@ -9,8 +9,12 @@ import IRole from "../../models/types/role";
 import checkRolesWrite from "../../utils/auth/roleCheckWrite";
 import LeaguesData from "../../utils/db/leagues/LeaguesData";
 import ILeague from "../../models/types/league";
+import LeagueAuthChecker from "../../utils/auth/hierarchy/LeagueAuthChecker";
+import getToken from "../../utils/auth/getToken";
 
 const router = express.Router();
+
+const authChecker = new LeagueAuthChecker();
 
 const failed = (res: any) => {
    const err = new MyError(400, "Bad Request");
@@ -19,7 +23,7 @@ const failed = (res: any) => {
 
 // check for header
 router.use("/", (req, res, next) => {
-   if (!req.headers.authorization) {
+   if (!req.headers.authentication) {
       res.status(401).send();
    } else {
       next();
@@ -28,13 +32,13 @@ router.use("/", (req, res, next) => {
 
 // check token valid
 router.use("/", (req, res, next) => {
-   const decoded: IUserToken = jwt.decode(
-      req.headers.authorization!
-   ) as IUserToken;
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
 
    UserData.findUserById(decoded.sub).then((user: IUser | null) => {
       user
-         ?.verifyUser(req.headers.authorization!)
+         ?.verifyUser(getToken(req.headers.authentication as string) as string)
          .then((_) => {
             next();
          })
@@ -46,14 +50,14 @@ router.use("/", (req, res, next) => {
 
 // check for permissions
 router.use("/:id?", (req, res, next) => {
-   const decoded: IUserToken = jwt.decode(
-      req.headers.authorization!
-   ) as IUserToken;
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
    const id = req.params.id ? req.params.id : "";
 
    UserData.findUserById(decoded.sub).then((user: IUser | null) => {
       if (user?._id) {
-         const role: IRole | undefined = checkRoles("leagues", id, user.roles);
+         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
          if (typeof role === "undefined") {
             res.status(403).send();
          } else {
@@ -75,13 +79,12 @@ router.get("/:id", (req, res, _) => {
 });
 
 router.post("/", (req, res, _) => {
-   const decoded: IUserToken = jwt.decode(
-      req.headers.authorization!
-   ) as IUserToken;
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
    UserData.findUserById(decoded.sub).then((user: IUser | null) => {
       if (user?._id) {
-         const role: IRole | undefined = checkRolesWrite(
-            "leagues",
+         const role: IRole | undefined = authChecker.checkAuthWrite(
             "",
             user.roles
          );
@@ -104,7 +107,7 @@ router.post("/", (req, res, _) => {
    });
 
    // create new
-   if (!req.headers.authorization) {
+   if (!req.headers.authentication) {
       failed(res);
    } else {
       // find one

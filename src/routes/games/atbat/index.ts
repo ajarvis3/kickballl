@@ -4,8 +4,17 @@ import ITemplate from "../../../models/types/templates";
 import MyError from "../../../types/Error";
 import AtBatData from "../../../utils/db/atbats/AtBatData";
 import TemplateData from "../../../utils/db/templates/TemplateData";
+import IUser from "../../../models/types/user";
+import UserData from "../../../utils/db/users/UserData";
+import IUserToken from "../../../utils/auth/types/OAuthData";
+import IRole from "../../../models/types/role";
+import jwt from "jsonwebtoken";
+import AtBatAuthChecker from "../../../utils/auth/hierarchy/AtBatAuthChecker";
+import getToken from "../../../utils/auth/getToken";
 
 const router = express.Router();
+
+const authChecker = new AtBatAuthChecker();
 
 const failed = (res: any) => {
    const err = new MyError(400, "Bad Request");
@@ -17,6 +26,54 @@ const newAtBat = (gameId: string, template: ITemplate) => {
    const initArr = new Array(countTypes.length).fill(0);
    return AtBatData.createAndSaveAtBat(gameId, initArr);
 };
+
+// check for header
+router.use("/", (req, res, next) => {
+   if (!req.headers.authentication) {
+      res.status(401).send();
+   } else {
+      next();
+   }
+});
+
+// check token valid
+router.use("/", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      user
+         ?.verifyUser(getToken(req.headers.authentication as string) as string)
+         .then((_) => {
+            next();
+         })
+         .catch((e) => {
+            res.status(401).send();
+         });
+   });
+});
+
+// check for permissions
+router.use("/:id?", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+   const id = req.params.id ? req.params.id : "";
+
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      if (user?._id) {
+         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
+         if (typeof role === "undefined") {
+            res.status(403).send();
+         } else {
+            next();
+         }
+      } else {
+         res.status(401).send();
+      }
+   });
+});
 
 router.post("/", (req: any, res: any, next: NextFunction) => {
    if (!req.body.gameId || !req.body.templateId) {

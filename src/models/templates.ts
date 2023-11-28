@@ -35,6 +35,9 @@ const TemplateSchema = new mongoose.Schema<ITemplate>(
          type: Number,
          required: true,
       },
+      league: {
+         type: String,
+      },
    },
    { _id: false }
 );
