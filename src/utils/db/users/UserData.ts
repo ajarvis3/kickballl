@@ -15,7 +15,7 @@ class UserData {
    };
 
    saveUser = (user: IUser) => {
-      console.log("saveUser");
+      console.log("saveUser", user);
       return user.save();
    };
 
@@ -31,6 +31,7 @@ class UserData {
       const email = decodedToken.email;
       const name = decodedToken.name;
       const id = decodedToken.sub;
+      console.log(decodedToken);
       return this.findUserByEmail(email).then((user: IUser | null) => {
          if (user?._id) {
             return user;

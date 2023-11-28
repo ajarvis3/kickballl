@@ -15,22 +15,18 @@ const UserSchema = new mongoose.Schema<IUser>(
          type: String,
          required: true,
       },
-      __v: {
-         type: Number,
-         required: true,
-      },
    },
    { _id: false }
 );
 
 UserSchema.methods.verifyUser = (credentials: string) => {
-    const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-    const client = new OAuth2Client(CLIENT_ID);
-    return client.verifyIdToken({
-       idToken: credentials,
-       audience: CLIENT_ID,
-    });
- }; 
+   const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+   const client = new OAuth2Client(CLIENT_ID);
+   return client.verifyIdToken({
+      idToken: credentials,
+      audience: CLIENT_ID,
+   });
+};
 
 const User: mongoose.Model<IUser> = mongoose.model("User", UserSchema);
 export default User;

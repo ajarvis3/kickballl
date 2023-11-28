@@ -9,17 +9,21 @@ const router = express.Router();
 
 /* POST signin data */
 router.post("/", (req, res, next) => {
+   console.log("/auth");
    const failed = () => {
       const err = new MyError(401, "Unauthorized");
       next(err);
    };
 
+   console.log("!req.body.credential || !req.body.clientId");
    if (!req.body.credential || !req.body.clientId) {
       failed();
    }
    const decoded: IUserToken = jwt.decode(req.body.credential) as IUserToken;
 
+   console.log("UserData.findOrCreateUser", decoded);
    UserData.findOrCreateUser(decoded).then((user: IUser | undefined) => {
+      console.log("if(user)", user);
       if (user) {
          user
             .verifyUser(req.body.credential)
