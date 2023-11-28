@@ -39,5 +39,5 @@ router.post("/", (req, res, next) => {
    });
 });
 
-const Router = router;
-export default Router;
+const userRouter = router;
+export default userRouter;
