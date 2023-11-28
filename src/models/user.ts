@@ -1,5 +1,6 @@
 import { OAuth2Client } from "google-auth-library";
 import mongoose from "mongoose";
+import RoleSchema from "./role";
 import IUser from "./types/user";
 
 const UserSchema = new mongoose.Schema<IUser>(
@@ -13,6 +14,10 @@ const UserSchema = new mongoose.Schema<IUser>(
       },
       email: {
          type: String,
+         required: true,
+      },
+      roles: {
+         type: [RoleSchema],
          required: true,
       },
    },

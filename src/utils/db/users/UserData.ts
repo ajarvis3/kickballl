@@ -1,9 +1,10 @@
+import IRole from "../../../models/types/role";
 import IUser from "../../../models/types/user";
 import User from "../../../models/user";
 import IUserToken from "../../auth/types/OAuthData";
 
 class UserData {
-   createUser = (email: string, name: string, id: string) => {
+   createUser = (email: string, name: string, id: string, roles: IRole[]) => {
       console.log("createUser");
       const _id = id;
 
@@ -11,6 +12,7 @@ class UserData {
          _id,
          name,
          email,
+         roles,
       });
    };
 
@@ -22,9 +24,10 @@ class UserData {
    createAndSaveUser = (
       email: string,
       name: string,
-      id: string
+      id: string,
+      roles: IRole[]
    ): Promise<IUser> => {
-      return this.saveUser(this.createUser(email, name, id));
+      return this.saveUser(this.createUser(email, name, id, roles));
    };
 
    findOrCreateUser = (decodedToken: IUserToken) => {
@@ -36,7 +39,7 @@ class UserData {
          if (user?._id) {
             return user;
          } else {
-            return this.createAndSaveUser(email, name, id).then(
+            return this.createAndSaveUser(email, name, id, []).then(
                (user: IUser | null) => {
                   if (user?._id) return user;
                   else return undefined;
