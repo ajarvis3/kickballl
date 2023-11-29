@@ -7,9 +7,10 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
    LeaguesData.findAll().then((value: ILeague[] | undefined) => {
       if (value) {
-         const namesOnly = value.map((val: ILeague) => val.leagueName);
-         console.log(namesOnly);
-         res.status(200).send(JSON.stringify(namesOnly));
+         const namesIdsOnly = value.map((val: ILeague) => {
+            return { _id: val._id, leagueName: val.leagueName };
+         });
+         res.status(200).send(JSON.stringify(namesIdsOnly));
       }
    });
 });

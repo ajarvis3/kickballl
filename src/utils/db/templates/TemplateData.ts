@@ -12,7 +12,8 @@ class TemplateData {
       gameSlaughterRule: number | null,
       gameSlaughterEffectiveInning: number | null,
       outcomes: IOutcome[],
-      maxInnings: number
+      maxInnings: number,
+      league: string
    ) => {
       const _id = uuidv4();
       return new Template({
@@ -25,6 +26,7 @@ class TemplateData {
          gameSlaughterEffectiveInning,
          outcomes,
          maxInnings,
+         league,
       });
    };
    saveTemplate = (template: ITemplate) => {
@@ -38,7 +40,8 @@ class TemplateData {
       gameSlaughterRule: number | null,
       gameSlaughterEffectiveInning: number | null,
       outcomes: IOutcome[],
-      maxInnings: number
+      maxInnings: number,
+      league: string
    ): Promise<ITemplate> => {
       return this.saveTemplate(
          this.createTemplate(
@@ -49,7 +52,8 @@ class TemplateData {
             gameSlaughterRule,
             gameSlaughterEffectiveInning,
             outcomes,
-            maxInnings
+            maxInnings,
+            league
          )
       );
    };
@@ -61,6 +65,9 @@ class TemplateData {
    };
    getTemplateById = (id: string) => {
       return Template.findById(id).exec();
+   };
+   getTemplatesByLeagueId = (leagueId: string) => {
+      return Template.find({ league: leagueId }).exec();
    };
 }
 

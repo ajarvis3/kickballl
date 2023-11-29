@@ -94,6 +94,7 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
    } else {
       const outcomes: IOutcome[] = req.body.outcomes;
       const countTypes: string[] = req.body.countTypes;
+      const league: string = req.body.league ? req.body.league : "";
       outcomes.forEach((outcome) => {
          outcome.countTypes = countTypes;
       });
@@ -105,7 +106,8 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          req.body.gameSlaughterRule,
          req.body.gameSlaughterEffectiveInning,
          outcomes,
-         req.body.maxInnings
+         req.body.maxInnings,
+         league
       ).then((template: ITemplate) => {
          res.status(200).send(JSON.stringify(template));
       });
@@ -119,10 +121,17 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
       TemplateData.getTemplateById(req.params.id).then((template) => {
          res.status(200).send(JSON.stringify(template));
       });
-   } else {
+   } else if (!req.query.league) {
       TemplateData.getAllTemplates().then((templates: ITemplate[]) => {
          res.status(200).send(JSON.stringify(templates));
       });
+   } else {
+      const leagueId = req.query.league;
+      TemplateData.getTemplatesByLeagueId(leagueId).then(
+         (templates: ITemplate[]) => {
+            res.status(200).send(JSON.stringify(templates));
+         }
+      );
    }
 });
 
