@@ -29,7 +29,6 @@ router.use("/", (req, res, next) => {
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   console.log("decoded", decoded);
 
    UserData.findUserById(decoded.sub).then((user: IUser | null) => {
       user

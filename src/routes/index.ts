@@ -3,6 +3,7 @@ import authRouter from "./auth/index";
 import gamesRouter from "./games/index";
 import leaguesRouter from "./leagues/index";
 import outcomesRouter from "./outcomes/index";
+import readLeaguesRouter from "./readLeagues";
 import templatesRouter from "./templates/index";
 
 const router = express.Router();
@@ -12,6 +13,7 @@ router.use("/outcomes", outcomesRouter);
 router.use("/games", gamesRouter);
 router.use("/auth", authRouter);
 router.use("/leagues", leaguesRouter);
+router.use("/readLeagues", readLeaguesRouter);
 
 const indexRouter = router;
 export default indexRouter;

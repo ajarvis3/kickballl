@@ -16,6 +16,9 @@ class LeagueData {
    findById = (_id: string) => {
       return League.findById(_id).exec();
    };
+   findAll = () => {
+      return League.find().exec();
+   };
 }
 
 export default new LeagueData();
