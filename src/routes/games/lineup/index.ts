@@ -16,50 +16,17 @@ const authChecker = new LineupAuthChecker();
 
 // check for header
 router.use("/", (req, res, next) => {
-   if (!req.headers.authentication) {
-      res.status(401).send();
-   } else {
-      next();
-   }
+   authChecker.checkTokenExists(req, res, next);
 });
 
 // check token valid
 router.use("/", (req, res, next) => {
-   const decoded: any = jwt.decode(
-      getToken(req.headers.authentication as string) as string
-   ) as any;
-
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
-      user
-         ?.verifyUser(getToken(req.headers.authentication as string) as string)
-         .then((_) => {
-            next();
-         })
-         .catch((e) => {
-            res.status(401).send();
-         });
-   });
+   authChecker.checkTokenValid(req, res, next);
 });
 
 // check for permissions
 router.use("/:id?", (req, res, next) => {
-   const decoded: any = jwt.decode(
-      getToken(req.headers.authentication as string) as string
-   ) as any;
-   const id = req.params.id ? req.params.id : "";
-
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
-      if (user?._id) {
-         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
-         if (typeof role === "undefined") {
-            res.status(403).send();
-         } else {
-            next();
-         }
-      } else {
-         res.status(401).send();
-      }
-   });
+   authChecker.checkTokenPermissions(req, res, next);
 });
 
 // /games/lineup

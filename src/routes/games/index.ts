@@ -78,56 +78,22 @@ const updateGame = (gameId: string, game: IGame, res: any) => {
 
 // check for header
 router.use("/", (req, res, next) => {
-   console.log(req.headers);
-   if (!req.headers.authentication) {
-      res.status(401).send("No Auth Header Included");
-   } else {
-      next();
-   }
+   authChecker.checkTokenExists(req, res, next);
 });
 
 // check token valid
 router.use("/", (req, res, next) => {
-   const decoded: any = jwt.decode(
-      getToken(req.headers.authentication as string) as string
-   );
-
-   UserData.findUserById(decoded.sub!).then((user: IUser | null) => {
-      user
-         ?.verifyUser(getToken(req.headers.authentication as string) as string)
-         .then((value) => {
-            console.log(value);
-            next();
-         })
-         .catch((e) => {
-            res.status(401).send("Invalid Credentials");
-         });
-   });
+   authChecker.checkTokenValid(req, res, next);
 });
 
 // check for permissions
 router.use("/:id?", (req, res, next) => {
-   const decoded: any = jwt.decode(
-      getToken(req.headers.authentication as string) as string
-   ) as any;
-   const id = req.params.id ? req.params.id : "";
-
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
-      if (user?._id) {
-         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
-         if (typeof role === "undefined") {
-            res.status(403).send();
-         } else {
-            next();
-         }
-      } else {
-         res.status(401).send();
-      }
-   });
+   authChecker.checkTokenPermissions(req, res, next);
 });
 
 // /games
 router.post("/", (req: any, res: any, next: NextFunction) => {
+   // TODO: need to check write permissions
    console.log("POST /games", req.body);
    if (!req.body.ruleTemplateId || !req.body.lineup1Id || !req.body.lineup2Id) {
       failed(res);

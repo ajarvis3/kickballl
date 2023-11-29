@@ -60,6 +60,10 @@ class UserData {
    findUserById = (id: string) => {
       return User.findById(id).exec();
    };
+
+   updateUserById = (id: string, user: IUser) => {
+      return User.findByIdAndUpdate(id, user);
+   };
 }
 
 export default new UserData();

@@ -1,9 +1,10 @@
 import IRole from "../../../models/types/role";
 import checkRoles from "../roleCheck";
 import checkRolesWrite from "../roleCheckWrite";
+import IAuthChecker from "./AuthChecker";
 import LeagueAuthChecker from "./LeagueAuthChecker";
 
-class TemplateAuthChecker extends LeagueAuthChecker {
+class TemplateAuthChecker extends LeagueAuthChecker implements IAuthChecker {
    checkAuth(entityId: string, roles: IRole[]): IRole | undefined {
       const role: IRole | undefined = checkRoles("templates", entityId, roles);
       if (role !== undefined) return role;
