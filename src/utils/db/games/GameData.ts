@@ -70,6 +70,9 @@ class GameData {
    findById = (id: string) => {
       return Game.findById(id).exec();
    };
+   getTemplatesByTemplateId = (templateId: string) => {
+      return Game.find({ ruleTemplateId: templateId }).exec();
+   };
 }
 
 export default new GameData();

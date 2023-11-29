@@ -240,7 +240,7 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
             failed(res);
          }
       });
-   } else {
+   } else if (!req.query.templateId) {
       GameData.findAllGames().then(async (games: IGame[]) => {
          const gameRespArr: IGameResponse[] = [];
 
@@ -266,8 +266,41 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
             });
          }
          res.status(200).send(JSON.stringify(gameRespArr));
-         console.log("returned");
       });
+   } else {
+      const templateId = req.query.templateId;
+      GameData.getTemplatesByTemplateId(templateId).then(
+         async (games: IGame[]) => {
+            const gameRespArr: IGameResponse[] = [];
+
+            for (let i = 0; i < games.length; i++) {
+               const game = games[i];
+               await LineupData.findById(game.lineup1Id!).then(
+                  async (lineup1) => {
+                     await LineupData.findById(game.lineup2Id!).then(
+                        (lineup2) => {
+                           if (
+                              (lineup1 === undefined || lineup1?._id) &&
+                              (lineup2 === undefined || lineup2?._id)
+                           ) {
+                              const gameResp: IGameResponse = {
+                                 ...game.toObject(),
+                                 lineup1: undefined,
+                                 lineup2: undefined,
+                              };
+                              gameResp.lineup1 = lineup1;
+                              gameResp.lineup2 = lineup2;
+                              gameRespArr.push(gameResp);
+                              console.log(1);
+                           }
+                        }
+                     );
+                  }
+               );
+            }
+            res.status(200).send(JSON.stringify(gameRespArr));
+         }
+      );
    }
 });
 

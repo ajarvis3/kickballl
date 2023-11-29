@@ -1,0 +1,4217 @@
+yarn run v1.22.19
+$ yarn clean
+$ yarn rimraf ./dist
+$ C:\Programming_C_Drive\kickball\node_modules\.bin\rimraf ./dist
+$ yarn build & nodemon dist/index.js
+$ tsc
+[33m[nodemon] 3.0.1[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node dist/index.js`[39m
+connection string: mongodb://127.0.0.1:27017/kickball
+DB_USER=undefined	DB_PASSWORD=undefined
+server started at http://localhost:8080
+Connection to Mongo successful
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+d7ce0d66-1d64-49b0-998e-03ed383a9d72
+d7ce0d66-1d64-49b0-998e-03ed383a9d72
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'sec-ch-ua-platform': '"Android"',
+  dnt: '1',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'content-type': 'application/json; charset=UTF-8',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'sec-ch-ua-platform': '"Android"',
+  dnt: '1',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'content-type': 'application/json; charset=UTF-8',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+{
+  host: 'localhost:8080',
+  connection: 'keep-alive',
+  'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+  'content-type': 'application/json',
+  dnt: '1',
+  authentication: 'bearer "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNzJkYTFkZjUwMWNhNmY3NTZiZjEwM2ZkN2M3MjAyOTQ3NzI1MDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzcwODAyOTI1NzYtdGNyN3Uwc2hpZmxlcWhvcm9nMzZwYnQ3ZnFnY3NyOWUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAwODgwMjAyNDk0NTEyOTM2NTQiLCJlbWFpbCI6IndlcmRuYXRhbGlhbWdAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTcwMTIyMjM4MywibmFtZSI6IkFuZHJldyBKYXJ2aXMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSnBEYWl1NmFYaklBS2FBZXZaUFV1OXJaWV9ucjVqM3ZxN2lJMmdMR0REPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFuZHJldyIsImZhbWlseV9uYW1lIjoiSmFydmlzIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE3MDEyMjI2ODMsImV4cCI6MTcwMTIyNjI4MywianRpIjoiNDllNWU4ZDQ0NmEyMzgzMzE2NTcyNDdkNjhiNzRhMjU1ZDhkNzhmYSJ9.npAwHi7Xr53uxATIyWWmM4ZdbJ1u2yzEL4P-MqjJ7nuNGe4CbmUhjINBb_RyuUya7cvIgdG1eg6D1qG8CYzXUL5huMTKPUZQavRJ4_oSyfk1OypYhTMwFwTRYXlBatULQVeMfS1sf_NmCMcziGTwax2liceeLbjoQDDDa9zKd1zOT5jjpp_B_zs-QuXqN9G92vYpceJKJrw7abM2u1dPxbqoYkxl6Ty7t2Biazd58PHQ9lxvMDVKXbNllG6jNo-GCIovUVxn7rvRUAwu60oW9bKofPmKW79UoRf-NVSpBgk4Wi9mQsvx22qNvbmLbnM2TUiycoU0Ph3XToz-gMt-nA"',
+  'sec-ch-ua-mobile': '?1',
+  'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36 Edg/119.0.0.0',
+  'sec-ch-ua-platform': '"Android"',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'en-US,en;q=0.9',
+  'if-none-match': 'W/"6e9b-hI0BdeoO3D+ZSGrdDGw8H/9xZ48"'
+}
+LoginTicket {
+  envelope: {
+    alg: 'RS256',
+    kid: '0e72da1df501ca6f756bf103fd7c720294772506',
+    typ: 'JWT'
+  },
+  payload: {
+    iss: 'https://accounts.google.com',
+    azp: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    aud: '137080292576-tcr7u0shifleqhorog36pbt7fqgcsr9e.apps.googleusercontent.com',
+    sub: '100088020249451293654',
+    email: 'werdnataliamg@gmail.com',
+    email_verified: true,
+    nbf: 1701222383,
+    name: 'Andrew Jarvis',
+    picture: 'https://lh3.googleusercontent.com/a/ACg8ocJpDaiu6aXjIAKaAevZPUu9rZY_nr5j3vq7iI2gLGDD=s96-c',
+    given_name: 'Andrew',
+    family_name: 'Jarvis',
+    locale: 'en',
+    iat: 1701222683,
+    exp: 1701226283,
+    jti: '49e5e8d446a238331657247d68b74a255d8d78fa'
+  }
+}
+GET /games:id
+1
+1
+1
+1
+1
+here
+[
+  {
+    _id: 'e46c7281-4eed-4703-9757-d97b89dd6ac5',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 7,
+    isTopInning: true,
+    lineup1Id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+    lineup2Id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+    date: 2023-11-23T14:16:27.372Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [
+      4,    0, 2,
+      5,    5, null,
+      null
+    ],
+    score2: [
+      4,    0, 4,
+      3,    6, null,
+      null
+    ],
+    currOuts: 1,
+    __v: 0,
+    lineup1: {
+      _id: 'b1e3498c-9c32-4dfc-b952-23e79fd369a3',
+      teamName: 'Team1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '98aedeed-af6f-4531-9923-172ee7665a2d',
+      teamName: 'Team2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '72bc2544-67b9-412f-ba3d-5a9a4378341c',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+    lineup2Id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+    date: 2023-11-23T14:28:23.236Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    score1: [ 0, 0, 1, 3, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '3ca48d7c-0d4d-4cd4-8931-ae4704d9eb17',
+      teamName: 'asd',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '7279ba78-04a6-404d-b40f-c3415810d8e6',
+      teamName: 'dsa',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: 'ed439598-ef99-4e19-8395-70a7d66db8cf',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 1,
+    isTopInning: true,
+    lineup1Id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+    lineup2Id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+    date: 2023-11-23T15:07:25.801Z,
+    atBatIds: [ [Object] ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 0,
+    __v: 0,
+    lineup1: {
+      _id: '7a2f4cc2-8020-4e77-ad2b-bcecb07a7cc1',
+      teamName: 'Team 1',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: '75e402df-f6b5-4f18-847f-88a00688e70e',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '326c86dd-c44a-4f49-8801-520400931d95',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 3,
+    isTopInning: false,
+    lineup1Id: '4293e255-1b60-4869-a109-cf38a5cac993',
+    lineup2Id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+    date: 2023-11-24T03:02:26.702Z,
+    atBatIds: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ],
+    score1: [ 0, 0, 0, 0, 0 ],
+    score2: [ 0, 0, 0, 0, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '4293e255-1b60-4869-a109-cf38a5cac993',
+      teamName: 'Team A',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'cc07349d-eea5-40af-9ea7-d62aaae30ca6',
+      teamName: 'Team 2',
+      lineup: [],
+      __v: 0
+    }
+  },
+  {
+    _id: '77745723-82c7-4fe7-8ba6-c01bae9ccdd6',
+    ruleTemplateId: 'd7ce0d66-1d64-49b0-998e-03ed383a9d72',
+    currInning: 6,
+    isTopInning: true,
+    lineup1Id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+    lineup2Id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+    date: 2023-11-28T02:30:07.278Z,
+    atBatIds: [ [Object], [Object], [Object], [Object] ],
+    score1: [ 1, 2, 7, 3, 3, null ],
+    score2: [ 1, 2, 3, 3, 0 ],
+    currOuts: 2,
+    __v: 0,
+    lineup1: {
+      _id: '075024ee-843c-42e7-8704-d1d2ed617db9',
+      teamName: 'dfas',
+      lineup: [],
+      __v: 0
+    },
+    lineup2: {
+      _id: 'c18e310a-6674-412e-bd31-887e1e33d403',
+      teamName: 'hkj',
+      lineup: [],
+      __v: 0
+    }
+  }
+]
+Terminate batch job (Y/N)? 
