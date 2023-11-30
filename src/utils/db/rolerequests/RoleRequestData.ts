@@ -7,6 +7,7 @@ class RoleRequestData {
    createRoleRequest = (requesterId: string, ownerId: string, role: IRole) => {
       const _id = uuidv4();
       return new RoleRequest({
+         _id,
          requesterId,
          ownerId,
          role,

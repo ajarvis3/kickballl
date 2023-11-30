@@ -38,8 +38,8 @@ router.use("/", (req, res, next) => {
 });
 
 // check for permissions
-router.use("/:id?", (req, res, next) => {
-   authChecker.checkTokenPermissions(req, res, next);
+router.use("/:id", (req, res, next) => {
+   authChecker.checkTokenPermissions("atbat", req, res, next);
 });
 
 router.post("/", (req: any, res: any, next: NextFunction) => {

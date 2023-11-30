@@ -87,8 +87,8 @@ router.use("/", (req, res, next) => {
 });
 
 // check for permissions
-router.use("/:id?", (req, res, next) => {
-   authChecker.checkTokenPermissions(req, res, next);
+router.use("/:id", (req, res, next) => {
+   authChecker.checkTokenPermissions("game", req, res, next);
 });
 
 // /games
@@ -226,7 +226,6 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
                      gameResp.lineup1 = lineup1;
                      gameResp.lineup2 = lineup2;
                      gameRespArr.push(gameResp);
-                     console.log(1);
                   }
                });
             });
@@ -257,7 +256,6 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
                               gameResp.lineup1 = lineup1;
                               gameResp.lineup2 = lineup2;
                               gameRespArr.push(gameResp);
-                              console.log(1);
                            }
                         }
                      );

@@ -8,6 +8,7 @@ import IUser from "../../models/types/user";
 import RoleRequestData from "../../utils/db/rolerequests/RoleRequestData";
 import IRoleRequest from "../../models/types/roleRequest";
 
+// /roleRequest
 const router = express.Router();
 
 const authChecker = new AdminAuthChecker();
@@ -28,7 +29,9 @@ router.post("/", (req, res, next) => {
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
+   console.log("body", req.body);
    UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      console.log("user", user);
       if (user?._id) {
          RoleRequestData.createAndSaveRole(
             user._id,
@@ -51,9 +54,10 @@ router.put("/:id", (req, res, next) => {
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+   UserData.findUserById(decoded.sub).then(async (user: IUser | null) => {
       if (user?._id) {
-         const writeRole: IRole | undefined = authChecker.checkAuthWrite(
+         const writeRole: IRole | undefined = await authChecker.checkAuthWrite(
+            req.body.role.type,
             req.params.id,
             user.roles
          );
@@ -82,34 +86,82 @@ router.delete("/:id", (req, res, next) => {
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+   console.log("params", req.params);
+   console.log(req.body);
+   UserData.findUserById(decoded.sub).then(async (user: IUser | null) => {
       if (user?._id) {
-         const writeRole: IRole | undefined = authChecker.checkAuthWrite(
+         console.log(user);
+
+         const writeRole: IRole | undefined = await authChecker.checkAuthWrite(
+            role.role.type,
             req.params.id,
             user.roles
          );
+         
+         console.log(writeRole);
          if (writeRole) {
+            console.log(approve);
             if (approve) {
+               console.log(role);
                UserData.findUserById(role.requesterId).then(
                   (user: IUser | null) => {
+                     console.log(user);
                      if (user?._id) {
                         const roles = user.roles;
                         roles.push(role.role);
                         user.roles = roles;
-                        UserData.updateUserById(user?._id, user);
+                        UserData.updateUserById(user?._id, user).then((_) => {
+                           RoleRequestData.deleteById(req.params.id).then(
+                              (_) => {
+                                 res.status(200).send("Deleted");
+                              }
+                           );
+                        });
                      } else {
                         res.status(400).send("Could Not Approve Role");
                         return;
                      }
-                     RoleRequestData.deleteById(req.params.id).then((_) => {
-                        res.status(200).send("Deleted");
-                     });
                   }
                );
+            } else {
+               console.log("here");
+               RoleRequestData.deleteById(req.params.id).then((_) => {
+                  res.status(200).send("Deleted");
+               });
             }
          } else {
             res.status(401).send();
          }
+      } else {
+         res.status(401).send();
+      }
+   });
+});
+
+router.get("/pendingApproval", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      if (user?._id) {
+         RoleRequestData.findByOwnerId(user.id).then((value) => {
+            res.status(200).send(JSON.stringify(value));
+         });
+      } else {
+         res.status(401).send();
+      }
+   });
+});
+
+router.get("/myRequests", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      if (user?._id) {
+         RoleRequestData.findByRequesterId(user.id).then((value) => {
+            res.status(200).send(JSON.stringify(value));
+         });
       } else {
          res.status(401).send();
       }

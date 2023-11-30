@@ -5,16 +5,28 @@ import AdminAuthChecker from "./AdminAuthChecker";
 import IAuthChecker from "./AuthChecker";
 
 class LeagueAuthChecker extends AdminAuthChecker implements IAuthChecker {
-   checkAuth(entityId: string, roles: IRole[]): IRole | undefined {
-      const role: IRole | undefined = checkRoles("leagues", entityId, roles);
+   async checkAuth(
+      entityType: string,
+      entityId: string,
+      roles: IRole[]
+   ): Promise<IRole | undefined> {
+      if (entityType !== "league")
+         return super.checkAuth(entityType, entityId, roles);
+      const role: IRole | undefined = checkRoles("league", entityId, roles);
       if (role !== undefined) return role;
-      return super.checkAuth(entityId, roles);
+      return super.checkAuth(entityType, entityId, roles);
    }
 
-   checkAuthWrite(entityId: string, roles: IRole[]): IRole | undefined {
+   async checkAuthWrite(
+      entityType: string,
+      entityId: string,
+      roles: IRole[]
+   ): Promise<IRole | undefined> {
+      if (entityType !== "league")
+         return super.checkAuthWrite(entityType, entityId, roles);
       const role = checkRolesWrite("leagues", entityId, roles);
       if (role !== undefined) return role;
-      return super.checkAuthWrite(entityId, roles);
+      return super.checkAuthWrite(entityType, entityId, roles);
    }
 }
 

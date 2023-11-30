@@ -32,6 +32,7 @@ router.post("/", (req, res, next) => {
                   auth: true,
                   id: user._id,
                   token: req.body.credential,
+                  roles: user.roles,
                });
             })
             .catch((e) => {

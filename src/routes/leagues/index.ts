@@ -30,8 +30,8 @@ router.use("/", (req, res, next) => {
 });
 
 // check for permissions
-router.use("/:id?", (req, res, next) => {
-   authChecker.checkTokenPermissions(req, res, next);
+router.use("/:id", (req, res, next) => {
+   authChecker.checkTokenPermissions("league", req, res, next);
 });
 
 router.get("/:id", (req, res, _) => {
@@ -47,9 +47,10 @@ router.post("/", (req, res, _) => {
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+   UserData.findUserById(decoded.sub).then(async (user: IUser | null) => {
       if (user?._id) {
-         const role: IRole | undefined = authChecker.checkAuthWrite(
+         const role: IRole | undefined = await authChecker.checkAuthWrite(
+            "league",
             "",
             user.roles
          );

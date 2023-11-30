@@ -9,13 +9,20 @@ import IAuthChecker from "./AuthChecker";
 import jwt from "jsonwebtoken";
 
 class AdminAuthChecker implements IAuthChecker {
-   checkAuth(entityId: string, roles: IRole[]): IRole | undefined {
-      console.log(roles);
+   async checkAuth(
+      entityType: string,
+      entityId: string,
+      roles: IRole[]
+   ): Promise<IRole | undefined> {
+      console.log("adminAuthChecker", roles);
       return checkRoles("*", "*", roles);
    }
 
-   checkAuthWrite(entityId: string, roles: IRole[]): IRole | undefined {
-      console.log(roles);
+   async checkAuthWrite(
+      entityType: string,
+      entityId: string,
+      roles: IRole[]
+   ): Promise<IRole | undefined> {
       return checkRolesWrite("*", "*", roles);
    }
 
@@ -46,20 +53,30 @@ class AdminAuthChecker implements IAuthChecker {
       });
    }
 
-   checkTokenPermissions(req: any, res: any, next: NextFunction): void {
+   checkTokenPermissions(
+      entityType: string,
+      req: any,
+      res: any,
+      next: NextFunction
+   ): void {
       const decoded: any = jwt.decode(
          getToken(req.headers.authentication as string) as string
       ) as any;
       const id = req.params.id ? req.params.id : "";
 
-      UserData.findUserById(decoded.sub).then((user: IUser | null) => {
+      UserData.findUserById(decoded.sub).then(async (user: IUser | null) => {
          if (user?._id) {
-            const role: IRole | undefined = this.checkAuth(id, user.roles);
-            if (typeof role === "undefined") {
-               res.status(403).send();
-            } else {
-               next();
-            }
+            this.checkAuth(entityType, id, user.roles).then((role) => {
+               console.log("role", role);
+               if (role && role._id) {
+                  console.log("checkTokenPermissions", role);
+                  if (typeof role === "undefined") {
+                     res.status(403).send();
+                  } else {
+                     next();
+                  }
+               }
+            });
          } else {
             res.status(401).send();
          }
