@@ -38,8 +38,9 @@ router.get("/:id", (req, res, _) => {
    if (!req.params.id) {
       failed(res);
    } else {
-      // find it
-      res.status(200).send(JSON.stringify({}));
+      LeaguesData.findById(req.params.id).then((value) => {
+         res.status(200).send(JSON.stringify(value));
+      });
    }
 });
 

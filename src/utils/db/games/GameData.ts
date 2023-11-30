@@ -14,7 +14,8 @@ class GameData {
       atBatIds: IAtBat[],
       score1: number[],
       score2: number[],
-      currOuts: number
+      currOuts: number,
+      owner: string
    ) => {
       const _id = uuidv4();
       return new Game({
@@ -29,6 +30,7 @@ class GameData {
          score1,
          score2,
          currOuts,
+         owner,
       });
    };
    saveGame = (game: IGame) => {
@@ -44,7 +46,8 @@ class GameData {
       atBatIds: IAtBat[],
       score1: number[],
       score2: number[],
-      currOuts: number
+      currOuts: number,
+      owner: string
    ) => {
       return this.saveGame(
          this.createGame(
@@ -57,12 +60,14 @@ class GameData {
             atBatIds,
             score1,
             score2,
-            currOuts
+            currOuts,
+            owner
          )
       );
    };
    updateGame = (id: string, game: IGame) => {
-      return Game.findByIdAndUpdate(id, game, { returnDocument: "after" });
+      const { __v, ...des } = game;
+      return Game.findByIdAndUpdate(id, des, { returnDocument: "after" });
    };
    findAllGames = () => {
       return Game.find().exec();

@@ -4,10 +4,7 @@ import MyError from "../../types/Error";
 import express, { NextFunction } from "express";
 import IOutcome from "../../models/types/outcome";
 import TemplateAuthChecker from "../../utils/auth/hierarchy/TemplateAuthChecker";
-import IUser from "../../models/types/user";
 import UserData from "../../utils/db/users/UserData";
-import IUserToken from "../../utils/auth/types/OAuthData";
-import IRole from "../../models/types/role";
 import jwt from "jsonwebtoken";
 import getToken from "../../utils/auth/getToken";
 
@@ -29,6 +26,49 @@ router.use("/", (req, res, next) => {
 router.use("/:id", (req, res, next) => {
    console.log("params, ", req.params);
    authChecker.checkTokenPermissions("template", req, res, next);
+});
+
+router.post("/", (req, res, next) => {
+   if (
+      !req.body.name ||
+      !req.body.countTypes ||
+      !req.body.inningSlaughterRule ||
+      req.body.inningSlaughterRuleEffectiveLastLicks === undefined ||
+      !req.body.gameSlaughterRule ||
+      !req.body.gameSlaughterEffectiveInning ||
+      !req.body.outcomes ||
+      !req.body.maxInnings ||
+      req.body.league
+   ) {
+      console.error(
+         "POST templates failed",
+         req.body.name,
+         req.body.countTypes,
+         req.body.inningSlaughterRule,
+         req.body.inningSlaughterRuleEffectiveLastLicks,
+         req.body.gameSlaughterRule,
+         req.body.gameSlaughterEffectiveInning,
+         req.body.outcomes,
+         req.body.maxInnings
+      );
+      res.status(400).send();
+      const decoded: any = jwt.decode(
+         getToken(req.headers.authentication as string) as string
+      ) as any;
+
+      UserData.findUserById(decoded.sub).then((user) => {
+         if (!user) res.status(401).send();
+         authChecker
+            .checkAuthWrite("league", req.body.league, user!.roles)
+            .then((role) => {
+               if (role && role._id) {
+                  next();
+               } else {
+                  res.status(403).send();
+               }
+            });
+      });
+   }
 });
 
 // /templates
@@ -67,6 +107,10 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       outcomes.forEach((outcome) => {
          outcome.countTypes = countTypes;
       });
+      const decoded: any = jwt.decode(
+         getToken(req.headers.authentication as string) as string
+      ) as any;
+
       TemplateData.createAndSaveTemplate(
          req.body.name,
          req.body.countTypes,
@@ -76,7 +120,8 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          req.body.gameSlaughterEffectiveInning,
          outcomes,
          req.body.maxInnings,
-         league
+         league,
+         decoded.sub
       ).then((template: ITemplate) => {
          res.status(200).send(JSON.stringify(template));
       });

@@ -62,7 +62,8 @@ class UserData {
    };
 
    updateUserById = (id: string, user: IUser) => {
-      return User.findByIdAndUpdate(id, user);
+      const {__v, ...des} = user;
+      return User.findByIdAndUpdate(id, des);
    };
 }
 

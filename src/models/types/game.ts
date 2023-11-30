@@ -13,6 +13,7 @@ interface IGame extends mongoose.Document {
    score1: number[];
    score2: number[];
    currOuts: number;
+   owner: string;
    __v: number;
 }
 

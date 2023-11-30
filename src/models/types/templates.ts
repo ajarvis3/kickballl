@@ -13,6 +13,7 @@ interface ITemplate extends mongoose.Document {
    outcomes: IOutcome[];
    maxInnings: number;
    league: string;
+   owner: string;
    __v: number;
 }
 

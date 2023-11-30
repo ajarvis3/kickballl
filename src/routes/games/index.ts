@@ -122,10 +122,15 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
       failed(res);
       return;
    } else {
+      const decoded: any = jwt.decode(
+         getToken(req.headers.authentication as string) as string
+      ) as any;
+
       TemplateData.getTemplateById(req.body.ruleTemplateId).then((template) => {
          if (template?._id) {
             const maxInnings = template.maxInnings;
             const initialScores = new Array(maxInnings).fill(0);
+            const owner = decoded.sub;
             GameData.createAndSaveGame(
                req.body.ruleTemplateId,
                1,
@@ -136,7 +141,8 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
                [],
                initialScores,
                initialScores,
-               0
+               0,
+               owner
             ).then((game: IGame) => {
                newAtBat(game._id, template).then((value: IAtBat) => {
                   game.atBatIds.push(value);

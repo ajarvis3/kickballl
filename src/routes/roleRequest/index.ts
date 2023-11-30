@@ -7,6 +7,9 @@ import UserData from "../../utils/db/users/UserData";
 import IUser from "../../models/types/user";
 import RoleRequestData from "../../utils/db/rolerequests/RoleRequestData";
 import IRoleRequest from "../../models/types/roleRequest";
+import LeaguesData from "../../utils/db/leagues/LeaguesData";
+import TemplateData from "../../utils/db/templates/TemplateData";
+import GameData from "../../utils/db/games/GameData";
 
 // /roleRequest
 const router = express.Router();
@@ -21,25 +24,39 @@ router.use("/", (req, res, next) => {
    authChecker.checkTokenValid(req, res, next);
 });
 
-router.post("/", (req, res, next) => {
-   if (!req.body.ownerId || !req.body.role) {
+router.post("/", async (req, res, next) => {
+   if (!req.body.role) {
       res.status(400).send("Field Missing");
       return;
    }
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   console.log("body", req.body);
+   const role = req.body.role as IRole;
+   let ownerId = req.body.ownerId;
+   if (!req.body.ownerId) {
+      let dataRetriever = undefined;
+      if (role.type === "league") dataRetriever = LeaguesData;
+      if (role.type === "template") dataRetriever = TemplateData;
+      if (role.type === "game") dataRetriever = GameData;
+      ownerId = await dataRetriever?.findById(role.id).then((value) => {
+         if (value && value.owner) {
+            console.log(value.owner);
+            return value.owner;
+         } else {
+            res.status(400).send();
+         }
+      });
+   }
+   console.log(ownerId);
    UserData.findUserById(decoded.sub).then((user: IUser | null) => {
       console.log("user", user);
       if (user?._id) {
-         RoleRequestData.createAndSaveRole(
-            user._id,
-            req.body.ownerId,
-            req.body.role
-         ).then((value) => {
-            res.status(200).send(JSON.stringify(value));
-         });
+         RoleRequestData.createAndSaveRole(user._id, ownerId, role).then(
+            (value) => {
+               res.status(200).send(JSON.stringify(value));
+            }
+         );
       } else {
          res.status(401).send();
       }
@@ -97,7 +114,7 @@ router.delete("/:id", (req, res, next) => {
             req.params.id,
             user.roles
          );
-         
+
          console.log(writeRole);
          if (writeRole) {
             console.log(approve);
