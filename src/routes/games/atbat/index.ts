@@ -42,6 +42,29 @@ router.use("/:id", (req, res, next) => {
    authChecker.checkTokenPermissions("atbat", req, res, next);
 });
 
+router.post("/", (req, res, next) => {
+   if (!req.body.gameId || !req.body.templateId) {
+      failed(res);
+      return;
+   }
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+
+   UserData.findUserById(decoded.sub).then((user) => {
+      if (!user) res.status(401).send();
+      authChecker
+         .checkAuthWrite("game", req.body.gameId, user!.roles)
+         .then((role) => {
+            if (role && role._id) {
+               next();
+            } else {
+               res.status(403).send();
+            }
+         });
+   });
+});
+
 router.post("/", (req: any, res: any, next: NextFunction) => {
    if (!req.body.gameId || !req.body.templateId) {
       failed(res);
@@ -57,6 +80,29 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          }
       });
    }
+});
+
+router.put("/:id", (req, res, next) => {
+   if (!req.body.gameId || !req.body.templateId) {
+      failed(res);
+      return;
+   }
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+
+   UserData.findUserById(decoded.sub).then((user) => {
+      if (!user) res.status(401).send();
+      authChecker
+         .checkAuthWrite("game", req.body.gameId, user!.roles)
+         .then((role) => {
+            if (role && role._id) {
+               next();
+            } else {
+               res.status(403).send();
+            }
+         });
+   });
 });
 
 // /games/atBat/:atBatId

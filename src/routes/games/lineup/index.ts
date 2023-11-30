@@ -29,7 +29,25 @@ router.use("/:id", (req, res, next) => {
    authChecker.checkTokenPermissions("lineup", req, res, next);
 });
 
+router.post("/", (req, res, next) => {
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+
+   UserData.findUserById(decoded.sub).then((user) => {
+      if (!user) res.status(401).send();
+      authChecker.checkAuthWrite("lineup", "", user!.roles).then((role) => {
+         if (role && role._id) {
+            next();
+         } else {
+            res.status(403).send();
+         }
+      });
+   });
+});
+
 // /games/lineup
+// TODO fix these permissions, eventually, someday
 router.post("/", (req, res: any, next: NextFunction) => {
    const failed = (res: any) => {
       const err = new MyError(400, "Bad Request");

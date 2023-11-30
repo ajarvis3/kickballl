@@ -9,6 +9,13 @@ import UserData from "../../utils/db/users/UserData";
 import IUserToken from "../../utils/auth/types/OAuthData";
 import IRole from "../../models/types/role";
 import jwt from "jsonwebtoken";
+import AdminAuthChecker from "../../utils/auth/hierarchy/AdminAuthChecker";
+
+const authChecker = new AdminAuthChecker();
+
+router.post("/", (req, res, next) => {
+   authChecker.checkTokenPermissions("*", req, res, next);
+});
 
 // /outcomes
 router.post("/", (req: any, res: any, next: NextFunction) => {
