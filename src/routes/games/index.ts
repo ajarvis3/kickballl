@@ -78,65 +78,59 @@ const updateGame = (gameId: string, game: IGame, res: any) => {
 
 // check for header
 router.use("/", (req, res, next) => {
-   console.log(req.headers);
-   if (!req.headers.authentication) {
-      res.status(401).send("No Auth Header Included");
-   } else {
-      next();
-   }
+   authChecker.checkTokenExists(req, res, next);
 });
 
 // check token valid
 router.use("/", (req, res, next) => {
-   const decoded: any = jwt.decode(
-      getToken(req.headers.authentication as string) as string
-   );
-
-   UserData.findUserById(decoded.sub!).then((user: IUser | null) => {
-      user
-         ?.verifyUser(getToken(req.headers.authentication as string) as string)
-         .then((value) => {
-            console.log(value);
-            next();
-         })
-         .catch((e) => {
-            res.status(401).send("Invalid Credentials");
-         });
-   });
+   authChecker.checkTokenValid(req, res, next);
 });
 
 // check for permissions
-router.use("/:id?", (req, res, next) => {
+router.use("/:id", (req, res, next) => {
+   authChecker.checkTokenPermissions("game", req, res, next);
+});
+
+router.post("/", (req, res, next) => {
+   if (!req.body.ruleTemplateId || !req.body.lineup1Id || !req.body.lineup2Id) {
+      failed(res);
+      return;
+   }
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   const id = req.params.id ? req.params.id : "";
 
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
-      if (user?._id) {
-         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
-         if (typeof role === "undefined") {
-            res.status(403).send();
-         } else {
-            next();
-         }
-      } else {
-         res.status(401).send();
-      }
+   UserData.findUserById(decoded.sub).then((user) => {
+      if (!user) res.status(401).send();
+      authChecker
+         .checkAuthWrite("template", req.body.ruleTemplateId, user!.roles)
+         .then((role) => {
+            if (role && role._id) {
+               next();
+            } else {
+               res.status(403).send();
+            }
+         });
    });
 });
 
 // /games
 router.post("/", (req: any, res: any, next: NextFunction) => {
+   // TODO: need to check write permissions
    console.log("POST /games", req.body);
    if (!req.body.ruleTemplateId || !req.body.lineup1Id || !req.body.lineup2Id) {
       failed(res);
       return;
    } else {
+      const decoded: any = jwt.decode(
+         getToken(req.headers.authentication as string) as string
+      ) as any;
+
       TemplateData.getTemplateById(req.body.ruleTemplateId).then((template) => {
          if (template?._id) {
             const maxInnings = template.maxInnings;
             const initialScores = new Array(maxInnings).fill(0);
+            const owner = decoded.sub;
             GameData.createAndSaveGame(
                req.body.ruleTemplateId,
                1,
@@ -147,7 +141,8 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
                [],
                initialScores,
                initialScores,
-               0
+               0,
+               owner
             ).then((game: IGame) => {
                newAtBat(game._id, template).then((value: IAtBat) => {
                   game.atBatIds.push(value);
@@ -166,50 +161,66 @@ router.put("/:id", (req: any, res: any, next: NextFunction) => {
       failed(res);
       return;
    } else {
-      const game: IGame = req.body.body.game;
-      console.log("Curr Outs1:" + game.currOuts);
-      TemplateData.getTemplateById(game.ruleTemplateId).then((template) => {
-         if (template?._id) {
-            const atBats = game.atBatIds;
-            const currAtBat = atBats[atBats.length - 1];
-            let atBatOutcome: IOutcome | undefined = currAtBat.outcome
-               ? currAtBat.outcome
-               : undefined;
-            template.outcomes.forEach((outcome) => {
-               console.log(currAtBat, outcome);
-               if (
-                  atBatOutcome === undefined &&
-                  outcome.testOutcome(currAtBat)
-               ) {
-                  atBatOutcome = outcome;
-                  currAtBat.outcome = atBatOutcome;
-                  if (outcome.name.toUpperCase().indexOf("OUT") != -1) {
-                     game.currOuts += 1;
-                  }
-                  game.atBatIds[game.atBatIds.length - 1] = currAtBat;
+      const decoded: any = jwt.decode(
+         getToken(req.headers.authentication as string) as string
+      ) as any;
+
+      UserData.findUserById(decoded.sub).then((user) => {
+         if (!user) res.status(401).send();
+         authChecker
+            .checkAuthWrite("game", req.params.id, user!.roles)
+            .then((role) => {
+               if (role && role._id) {
+                  next();
+               } else {
+                  GameData.findById(req.params.id).then((game) => {
+                     res.status(403).send(JSON.stringify(game));
+                  });
                }
             });
-            if (game.currOuts === 3) {
-               game.currOuts = 0;
-               if (game.isTopInning) {
-                  game.isTopInning = false;
-               } else {
-                  game.isTopInning = true;
-                  game.currInning += 1;
-               }
-            }
-            console.log("Curr Outs2:" + game.currOuts);
-            if (atBatOutcome === undefined && currAtBat !== undefined) {
-               updateGame(req.params.id, game, res);
-            } else {
-               newAtBat(game._id, template).then((value: IAtBat) => {
-                  game.atBatIds.push(value);
-                  updateGame(req.params.id, game, res);
-               });
-            }
-         } else failed(res);
       });
    }
+});
+
+// after auth
+router.put("/:id", (req, res, next) => {
+   const game: IGame = req.body.body.game;
+   TemplateData.getTemplateById(game.ruleTemplateId).then((template) => {
+      if (template?._id) {
+         const atBats = game.atBatIds;
+         const currAtBat = atBats[atBats.length - 1];
+         let atBatOutcome: IOutcome | undefined = currAtBat.outcome
+            ? currAtBat.outcome
+            : undefined;
+         template.outcomes.forEach((outcome) => {
+            if (atBatOutcome === undefined && outcome.testOutcome(currAtBat)) {
+               atBatOutcome = outcome;
+               currAtBat.outcome = atBatOutcome;
+               if (outcome.name.toUpperCase().indexOf("OUT") != -1) {
+                  game.currOuts += 1;
+               }
+               game.atBatIds[game.atBatIds.length - 1] = currAtBat;
+            }
+         });
+         if (game.currOuts === 3) {
+            game.currOuts = 0;
+            if (game.isTopInning) {
+               game.isTopInning = false;
+            } else {
+               game.isTopInning = true;
+               game.currInning += 1;
+            }
+         }
+         if (atBatOutcome === undefined && currAtBat !== undefined) {
+            updateGame(req.params.id, game, res);
+         } else {
+            newAtBat(game._id, template).then((value: IAtBat) => {
+               game.atBatIds.push(value);
+               updateGame(req.params.id, game, res);
+            });
+         }
+      } else failed(res);
+   });
 });
 
 // /games/:id?
@@ -260,7 +271,6 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
                      gameResp.lineup1 = lineup1;
                      gameResp.lineup2 = lineup2;
                      gameRespArr.push(gameResp);
-                     console.log(1);
                   }
                });
             });
@@ -291,7 +301,6 @@ router.get("/:id?", (req: any, res: any, next: NextFunction) => {
                               gameResp.lineup1 = lineup1;
                               gameResp.lineup2 = lineup2;
                               gameRespArr.push(gameResp);
-                              console.log(1);
                            }
                         }
                      );

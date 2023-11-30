@@ -8,7 +8,11 @@ router.get("/", (req, res, next) => {
    LeaguesData.findAll().then((value: ILeague[] | undefined) => {
       if (value) {
          const namesIdsOnly = value.map((val: ILeague) => {
-            return { _id: val._id, leagueName: val.leagueName };
+            return {
+               _id: val._id,
+               leagueName: val.leagueName,
+               owner: val.owner,
+            };
          });
          res.status(200).send(JSON.stringify(namesIdsOnly));
       }

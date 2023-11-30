@@ -13,6 +13,8 @@ const LineupSchema = new mongoose.Schema<ILineup>({
       type: [{ type: String }],
       required: true,
    },
+   owner: { type: String },
+   team: { type: String },
 });
 export { LineupSchema };
 

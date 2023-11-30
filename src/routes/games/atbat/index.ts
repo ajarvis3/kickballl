@@ -29,49 +29,39 @@ const newAtBat = (gameId: string, template: ITemplate) => {
 
 // check for header
 router.use("/", (req, res, next) => {
-   if (!req.headers.authentication) {
-      res.status(401).send();
-   } else {
-      next();
-   }
+   authChecker.checkTokenExists(req, res, next);
 });
 
 // check token valid
 router.use("/", (req, res, next) => {
-   const decoded: any = jwt.decode(
-      getToken(req.headers.authentication as string) as string
-   ) as any;
-
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
-      user
-         ?.verifyUser(getToken(req.headers.authentication as string) as string)
-         .then((_) => {
-            next();
-         })
-         .catch((e) => {
-            res.status(401).send();
-         });
-   });
+   authChecker.checkTokenValid(req, res, next);
 });
 
 // check for permissions
-router.use("/:id?", (req, res, next) => {
+router.use("/:id", (req, res, next) => {
+   authChecker.checkTokenPermissions("atbat", req, res, next);
+});
+
+router.post("/", (req, res, next) => {
+   if (!req.body.gameId || !req.body.templateId) {
+      failed(res);
+      return;
+   }
    const decoded: any = jwt.decode(
       getToken(req.headers.authentication as string) as string
    ) as any;
-   const id = req.params.id ? req.params.id : "";
 
-   UserData.findUserById(decoded.sub).then((user: IUser | null) => {
-      if (user?._id) {
-         const role: IRole | undefined = authChecker.checkAuth(id, user.roles);
-         if (typeof role === "undefined") {
-            res.status(403).send();
-         } else {
-            next();
-         }
-      } else {
-         res.status(401).send();
-      }
+   UserData.findUserById(decoded.sub).then((user) => {
+      if (!user) res.status(401).send();
+      authChecker
+         .checkAuthWrite("game", req.body.gameId, user!.roles)
+         .then((role) => {
+            if (role && role._id) {
+               next();
+            } else {
+               res.status(403).send();
+            }
+         });
    });
 });
 
@@ -90,6 +80,29 @@ router.post("/", (req: any, res: any, next: NextFunction) => {
          }
       });
    }
+});
+
+router.put("/:id", (req, res, next) => {
+   if (!req.body.gameId || !req.body.templateId) {
+      failed(res);
+      return;
+   }
+   const decoded: any = jwt.decode(
+      getToken(req.headers.authentication as string) as string
+   ) as any;
+
+   UserData.findUserById(decoded.sub).then((user) => {
+      if (!user) res.status(401).send();
+      authChecker
+         .checkAuthWrite("game", req.body.gameId, user!.roles)
+         .then((role) => {
+            if (role && role._id) {
+               next();
+            } else {
+               res.status(403).send();
+            }
+         });
+   });
 });
 
 // /games/atBat/:atBatId
