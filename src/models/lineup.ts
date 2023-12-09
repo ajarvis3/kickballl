@@ -5,7 +5,7 @@ const LineupSchema = new mongoose.Schema<ILineup>({
    _id: {
       type: String,
    },
-   teamName: {
+   teamId: {
       type: String,
       required: true,
    },

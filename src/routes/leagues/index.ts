@@ -9,6 +9,7 @@ import ILeague from "../../models/types/league";
 import LeagueAuthChecker from "../../utils/auth/hierarchy/LeagueAuthChecker";
 import getToken from "../../utils/auth/getToken";
 import IAuthChecker from "../../utils/auth/hierarchy/AuthChecker";
+import TeamRouter from "./teams";
 
 const router = express.Router();
 
@@ -33,6 +34,8 @@ router.use("/", (req, res, next) => {
 router.use("/:id", (req, res, next) => {
    authChecker.checkTokenPermissions("league", req, res, next);
 });
+
+router.use("/teams", TeamRouter);
 
 router.get("/:id", (req, res, _) => {
    if (!req.params.id) {
