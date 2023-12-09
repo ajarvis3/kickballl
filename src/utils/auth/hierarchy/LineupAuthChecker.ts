@@ -3,9 +3,9 @@ import LineupData from "../../db/lineup/LineupData";
 import checkRoles from "../roleCheck";
 import checkRolesWrite from "../roleCheckWrite";
 import IAuthChecker from "./AuthChecker";
-import GameAuthChecker from "./GameAuthChecker";
+import TeamAuthChecker from "./TeamAuthChecker";
 
-class LineupAuthChecker extends GameAuthChecker implements IAuthChecker {
+class LineupAuthChecker extends TeamAuthChecker implements IAuthChecker {
    async checkAuth(
       entityType: string,
       entityId: string,
@@ -16,12 +16,12 @@ class LineupAuthChecker extends GameAuthChecker implements IAuthChecker {
       const role: IRole | undefined = checkRoles("lineups", entityId, roles);
       if (role !== undefined) return role;
       // will not go anywhere
-      // LineupData.findById(entityId).then((value) => {
-      //    if (value?._id) {
-      //       return super.checkAuth("game", value._id, roles);
-      //    }
-      //    return undefined;
-      // });
+      LineupData.findById(entityId).then((value) => {
+         if (value?._id) {
+            return super.checkAuth("team", value.teamId, roles);
+         }
+         return undefined;
+      });
    }
 
    async checkAuthWrite(
@@ -33,13 +33,12 @@ class LineupAuthChecker extends GameAuthChecker implements IAuthChecker {
          return await super.checkAuthWrite(entityType, entityId, roles);
       const role = checkRolesWrite("lineups", entityId, roles);
       if (role !== undefined) return role;
-      // will not go anywhere
-      // LineupData.findById(entityId).then((value) => {
-      //    if (value?._id) {
-      //       return super.checkAuthWrite("game", value., roles);
-      //    }
-      //    return undefined;
-      // });
+      LineupData.findById(entityId).then((value) => {
+         if (value?._id) {
+            return super.checkAuthWrite("team", value.teamId, roles);
+         }
+         return undefined;
+      });
    }
 }
 

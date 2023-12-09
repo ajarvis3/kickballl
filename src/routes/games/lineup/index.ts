@@ -2,10 +2,7 @@ import express, { NextFunction } from "express";
 import ILineup from "../../../models/types/lineup";
 import MyError from "../../../types/Error";
 import LineupData from "../../../utils/db/lineup/LineupData";
-import IUser from "../../../models/types/user";
 import UserData from "../../../utils/db/users/UserData";
-import IUserToken from "../../../utils/auth/types/OAuthData";
-import IRole from "../../../models/types/role";
 import jwt from "jsonwebtoken";
 import LineupAuthChecker from "../../../utils/auth/hierarchy/LineupAuthChecker";
 import getToken from "../../../utils/auth/getToken";
@@ -38,6 +35,7 @@ router.post("/", (req, res, next) => {
       if (!user) res.status(401).send();
       authChecker.checkAuthWrite("lineup", "", user!.roles).then((role) => {
          if (role && role._id) {
+            res.locals.user = user;
             next();
          } else {
             res.status(403).send();
@@ -47,18 +45,18 @@ router.post("/", (req, res, next) => {
 });
 
 // /games/lineup
-// TODO fix these permissions, eventually, someday
 router.post("/", (req, res: any, next: NextFunction) => {
    const failed = (res: any) => {
       const err = new MyError(400, "Bad Request");
       res.status(400).send(JSON.stringify(err));
    };
-   if (!req.body.teamName) {
+   if (!req.body.teamId) {
       failed(res);
    } else {
       LineupData.createAndSaveLineup(
-         req.body.teamName,
-         req.body.lineup ? req.body.lineup : []
+         req.body.teamId,
+         req.body.lineup ? req.body.lineup : [],
+         res.locals.user._id
       ).then((lineup: ILineup) => {
          res.status(200).send(JSON.stringify(lineup));
       });

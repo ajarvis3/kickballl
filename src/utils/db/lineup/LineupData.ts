@@ -8,15 +8,19 @@ const returnUpdatedLineup = (updatedLineup: ILineup) => {
 };
 
 class LineupData {
-   createLineup = (teamName: string, lineup: string[]) => {
+   createLineup = (teamName: string, lineup: string[], owner: string) => {
       const _id = uuidv4();
-      return new Lineup({ _id, teamName, lineup });
+      return new Lineup({ _id, teamName, lineup, owner });
    };
    saveLineup = (Lineup: ILineup) => {
       return Lineup.save();
    };
-   createAndSaveLineup = (teamName: string, lineup: string[]) => {
-      return this.saveLineup(this.createLineup(teamName, lineup));
+   createAndSaveLineup = (
+      teamName: string,
+      lineup: string[],
+      owner: string
+   ) => {
+      return this.saveLineup(this.createLineup(teamName, lineup, owner));
    };
    findById = (_id: string) => {
       return Lineup.findById(_id).exec();
